@@ -1,0 +1,34 @@
+TOURING WITH MINA — SITE + ADMINISTRATION
+Réalisé par Webminds
+
+CE QU'IL FAUT SUR LE SERVEUR
+- PHP 8.1 ou plus récent, avec les extensions pdo_sqlite, gd et mbstring
+  (cPanel > Select PHP Version)
+- Apache ou LiteSpeed (les fichiers .htaccess doivent être pris en compte)
+- Aucune base MySQL à créer : le site utilise SQLite (un fichier dans data/)
+
+INSTALLATION
+1. Envoyer tout le contenu de ce dossier dans public_html (ou dans le dossier
+   du domaine / sous-domaine), en gardant les fichiers cachés .htaccess.
+2. Activer le certificat SSL (cPanel > SSL/TLS Status > AutoSSL).
+3. Ouvrir https://votre-domaine/install.php, créer le compte administrateur.
+   Les textes, circuits, photos et articles de la maquette sont importés.
+4. Supprimer le fichier install.php du serveur.
+5. Se connecter sur https://votre-domaine/admin/
+6. Dans Utilisateurs : créer un deuxième compte administrateur (Webminds et
+   la cliente), pour pouvoir réinitialiser un mot de passe oublié.
+7. Dans Réglages : vérifier l'adresse du site, l'e-mail qui reçoit les alertes,
+   ajouter le logo.
+
+AU LANCEMENT OFFICIEL (Réglages)
+- Décocher « Afficher le badge Contenu illustratif »
+- Cocher « Le site est visible sur Google »
+- Supprimer ou remplacer les 3 avis d'exemple (rubrique Avis)
+- Envoyer le plan du site à Google Search Console : https://votre-domaine/sitemap.xml
+
+SAUVEGARDE
+Télécharger régulièrement les dossiers data/ (base) et uploads/ (images),
+ou utiliser la sauvegarde complète de cPanel.
+
+MISE À JOUR DU CODE
+Remplacer tous les fichiers SAUF les dossiers data/ et uploads/.

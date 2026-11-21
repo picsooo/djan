@@ -1,0 +1,2663 @@
+[
+ {
+  "type": "settings",
+  "slug": "settings",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "site_name": "Touring with Mina",
+   "logo": "",
+   "logo_light": "",
+   "wa": "213672486298",
+   "wa_display": "+213 672 48 62 98",
+   "phone": "+213555304223",
+   "phone_display": "+213 555 30 42 23",
+   "email": "touring.withmina@gmail.com",
+   "notify_email": "",
+   "address": "Djanet, Algérie",
+   "instagram": "https://www.instagram.com/touring_with_mina",
+   "facebook": "https://www.facebook.com/Touringwithmina",
+   "domain": "https://www.touringwithmina.com",
+   "indexable": false,
+   "show_illus": true,
+   "og_img": "assets/img/hero-dunes.jpg",
+   "favicon": "",
+   "fr": {
+    "tagline": "Voyages privés et sur mesure à Djanet, Sahara algérien.",
+    "seo_title": "Touring with Mina, voyages privés à Djanet",
+    "credit": "Site réalisé par Webminds"
+   },
+   "en": {
+    "tagline": "Private, tailor-made journeys in Djanet, Algerian Sahara.",
+    "seo_title": "Touring with Mina, private journeys in Djanet",
+    "credit": "Website by Webminds"
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "ui",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "fr": {
+    "about": "Présentation",
+    "trips": "Circuits",
+    "gallery": "Galerie",
+    "blog": "Blog",
+    "book": "Réserver",
+    "menu": "Menu",
+    "close": "Fermer",
+    "illus": "Contenu illustratif, modifiable",
+    "plan": "Planifier mon voyage",
+    "see_trip": "Voir le circuit",
+    "all_trips": "Tous les circuits",
+    "read": "Lire l'article",
+    "all_posts": "Tous les articles",
+    "days": "jours",
+    "nights": "nuits",
+    "custom": "Sur mesure",
+    "day": "Jour",
+    "step": "Étape",
+    "level": "Niveau",
+    "season": "Saison",
+    "group": "Groupe",
+    "duration": "Durée",
+    "incl": "Compris dans le voyage",
+    "notincl": "Non compris",
+    "program": "Le programme",
+    "book_this": "Réserver ce circuit",
+    "other_trips": "D'autres circuits",
+    "foot": "Voyages privés et sur mesure à Djanet, Sahara algérien.",
+    "explore": "Explorer",
+    "contact": "Contact",
+    "follow": "Suivre",
+    "by": "Par Mina",
+    "toc": "Dans cet article",
+    "cta_h": "Votre voyage à Djanet commence par un message",
+    "cta_p": "Dites-nous vos dates et vos envies. Mina vous répond personnellement sous 24 heures.",
+    "skip": "Aller au contenu",
+    "dest": "Destinations",
+    "infos": "Infos pratiques",
+    "faq": "FAQ",
+    "contact_p": "Contact",
+    "see_dest": "Découvrir les lieux",
+    "all_faq": "Toutes les questions",
+    "related": "Le circuit qui y passe",
+    "to_see": "À voir",
+    "access": "Comment on y va",
+    "useful": "Liens utiles",
+    "reviews": "Avis",
+    "reviews_all": "Tous les avis",
+    "leave_review": "Laisser un avis"
+   },
+   "en": {
+    "about": "About",
+    "trips": "Tours",
+    "gallery": "Gallery",
+    "blog": "Journal",
+    "book": "Book",
+    "menu": "Menu",
+    "close": "Close",
+    "illus": "Sample content, editable",
+    "plan": "Plan my trip",
+    "see_trip": "View the tour",
+    "all_trips": "All tours",
+    "read": "Read the article",
+    "all_posts": "All articles",
+    "days": "days",
+    "nights": "nights",
+    "custom": "Tailor-made",
+    "day": "Day",
+    "step": "Step",
+    "level": "Level",
+    "season": "Season",
+    "group": "Group",
+    "duration": "Length",
+    "incl": "Included in the trip",
+    "notincl": "Not included",
+    "program": "The itinerary",
+    "book_this": "Book this tour",
+    "other_trips": "More tours",
+    "foot": "Private, tailor-made journeys in Djanet, Algerian Sahara.",
+    "explore": "Explore",
+    "contact": "Contact",
+    "follow": "Follow",
+    "by": "By Mina",
+    "toc": "In this article",
+    "cta_h": "Your journey to Djanet starts with a message",
+    "cta_p": "Tell us your dates and wishes. Mina replies personally within 24 hours.",
+    "skip": "Skip to content",
+    "dest": "Destinations",
+    "infos": "Travel info",
+    "faq": "FAQ",
+    "contact_p": "Contact",
+    "see_dest": "Discover the places",
+    "all_faq": "All questions",
+    "related": "The tour that goes there",
+    "to_see": "What to see",
+    "access": "How we get there",
+    "useful": "Useful links",
+    "reviews": "Reviews",
+    "reviews_all": "All reviews",
+    "leave_review": "Leave a review"
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "home",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "slides": [
+    "assets/img/hero-dunes.jpg",
+    "assets/img/tadrart-camp.jpg",
+    "assets/img/hero-arch.jpg",
+    "assets/img/ihrir-lake.jpg"
+   ],
+   "intro_imgs": [
+    "assets/img/tadrart-rocks.jpg",
+    "assets/img/tuareg-woman.jpg"
+   ],
+   "quote_img": "assets/img/mina.jpg",
+   "cta_img": "assets/img/dunes-car.jpg",
+   "strip": [
+    "assets/img/hero-arch.jpg",
+    "assets/img/camel.jpg",
+    "assets/img/tents.jpg",
+    "assets/img/essendilene-2.jpg",
+    "assets/img/woman-purple.jpg",
+    "assets/img/rainbow.jpg",
+    "assets/img/fire-man.jpg",
+    "assets/img/sky.jpg"
+   ],
+   "marquee": [
+    "Tadrart Rouge",
+    "Ihrir",
+    "Essendilène",
+    "Sefar",
+    "Tin Merzouga",
+    "Idaren",
+    "Sebiba",
+    "Tikoubaouine"
+   ],
+   "unesco_url": "https://whc.unesco.org/fr/list/179/",
+   "fr": {
+    "title": "Le désert se vit de l'intérieur",
+    "sub": "Voyages privés à Djanet, guidés par une équipe Imouhagh qui connaît chaque dune et chaque source.",
+    "kicker": "Touring with Mina, voyages privés au Sahara algérien",
+    "lines": [
+     "Le Sahara",
+     "se vit de",
+     "l'intérieur"
+    ],
+    "intro_h": "Djanet, l'oasis au pied du Tassili n'Ajjer",
+    "intro_p": "Au sud-est de l'Algérie, entre les falaises du Tassili et les dunes rouges de la Tadrart, Djanet est l'une des dernières grandes portes du Sahara. On y vient pour marcher, écouter et dormir dehors.",
+    "intro_p2": "Mina et son équipe Imouhagh organisent tout, du visa au dernier thé dans les dunes.",
+    "intro_link": "Découvrir notre histoire",
+    "trips_h": "Les circuits",
+    "trips_p": "Chaque programme est un point de départ. La durée, le rythme et les étapes se règlent avec vous.",
+    "facts": [
+     {
+      "n": "72 000",
+      "t": "km² de plateau classé par l'UNESCO"
+     },
+     {
+      "n": "15 000",
+      "t": "peintures et gravures rupestres"
+     },
+     {
+      "n": "1982",
+      "t": "inscription au patrimoine mondial"
+     }
+    ],
+    "facts_src": "Source : UNESCO, Tassili n'Ajjer",
+    "incl_h": "Vous n'avez rien à organiser",
+    "incl_p": "Tout est compris dans le voyage, de l'aéroport au bivouac.",
+    "incl": [
+     {
+      "t": "4x4 et chauffeurs du désert",
+      "p": "Des pilotes qui connaissent chaque piste.",
+      "img": "assets/img/jeep.jpg"
+     },
+     {
+      "t": "Bivouac tout équipé",
+      "p": "Tentes, matelas et couvertures fournis.",
+      "img": "assets/img/tents.jpg"
+     },
+     {
+      "t": "Pension complète",
+      "p": "Cuisine du désert préparée sur place.",
+      "img": "assets/img/food.jpg"
+     },
+     {
+      "t": "Guides Imouhagh",
+      "p": "Une équipe touarègue qui partage sa culture.",
+      "img": "assets/img/group-tea.jpg"
+     },
+     {
+      "t": "Assistance visa",
+      "p": "Nous vous guidons dans la démarche.",
+      "img": "assets/img/blue-turban.jpg"
+     },
+     {
+      "t": "Transferts aéroport",
+      "p": "Accueil à Djanet, à toute heure.",
+      "img": "assets/img/jeeps.jpg"
+     }
+    ],
+    "quote": "« Je suis tombée amoureuse de Djanet. Je suis là pour vous offrir un voyage que vous n'oublierez pas. »",
+    "quote_by": "Mina",
+    "gal_h": "Ce que vous verrez",
+    "gal_link": "Ouvrir la galerie",
+    "blog_h": "Le blog du désert",
+    "qb_trip": "Circuit",
+    "qb_month": "Mois",
+    "qb_people": "Voyageurs",
+    "qb_go": "Commencer",
+    "dest_h": "Cinq lieux, un même désert",
+    "dest_p": "De l'oasis aux dunes rouges, chaque étape a son caractère.",
+    "faq_h": "Avant de partir",
+    "faq_p": "Visa, saison, bivouac : les réponses courtes.",
+    "rev_h": "Ils sont partis avec Mina",
+    "rev_p": "Les mots de nos voyageurs, à leur retour du désert."
+   },
+   "en": {
+    "title": "Live the desert from the inside",
+    "sub": "Private journeys in Djanet, led by an Imouhagh team who know every dune and every spring.",
+    "kicker": "Touring with Mina, private journeys in the Algerian Sahara",
+    "lines": [
+     "Live the",
+     "Sahara from",
+     "the inside"
+    ],
+    "intro_h": "Djanet, the oasis at the foot of the Tassili n'Ajjer",
+    "intro_p": "In south-eastern Algeria, between the Tassili cliffs and the red dunes of the Tadrart, Djanet is one of the last great gateways to the Sahara. People come here to walk, listen and sleep outside.",
+    "intro_p2": "Mina and her Imouhagh team arrange everything, from the visa to the last tea in the dunes.",
+    "intro_link": "Read our story",
+    "trips_h": "The tours",
+    "trips_p": "Each itinerary is a starting point. Length, pace and stops are set with you.",
+    "facts": [
+     {
+      "n": "72,000",
+      "t": "km² of plateau listed by UNESCO"
+     },
+     {
+      "n": "15,000",
+      "t": "rock paintings and engravings"
+     },
+     {
+      "n": "1982",
+      "t": "World Heritage inscription"
+     }
+    ],
+    "facts_src": "Source: UNESCO, Tassili n'Ajjer",
+    "incl_h": "Nothing for you to organise",
+    "incl_p": "Everything is part of the trip, from the airport to the camp.",
+    "incl": [
+     {
+      "t": "4x4 and desert drivers",
+      "p": "Drivers who know every track.",
+      "img": "assets/img/jeep.jpg"
+     },
+     {
+      "t": "Fully equipped camp",
+      "p": "Tents, mattresses and blankets provided.",
+      "img": "assets/img/tents.jpg"
+     },
+     {
+      "t": "Full board",
+      "p": "Desert cooking prepared on site.",
+      "img": "assets/img/food.jpg"
+     },
+     {
+      "t": "Imouhagh guides",
+      "p": "A Tuareg team who share their culture.",
+      "img": "assets/img/group-tea.jpg"
+     },
+     {
+      "t": "Visa assistance",
+      "p": "We guide you through the process.",
+      "img": "assets/img/blue-turban.jpg"
+     },
+     {
+      "t": "Airport transfers",
+      "p": "Welcome in Djanet, at any hour.",
+      "img": "assets/img/jeeps.jpg"
+     }
+    ],
+    "quote": "“I fell in love with Djanet. I'm here to give you a trip you won't forget.”",
+    "quote_by": "Mina",
+    "gal_h": "What you will see",
+    "gal_link": "Open the gallery",
+    "blog_h": "Desert journal",
+    "qb_trip": "Tour",
+    "qb_month": "Month",
+    "qb_people": "Travellers",
+    "qb_go": "Start",
+    "dest_h": "Five places, one desert",
+    "dest_p": "From the oasis to the red dunes, each stop has its own character.",
+    "faq_h": "Before you go",
+    "faq_p": "Visa, season, camp life: the short answers.",
+    "rev_h": "They travelled with Mina",
+    "rev_p": "Words from our travellers, back from the desert."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "day",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Une journée dans le désert",
+    "p": "Du premier thé au ciel étoilé, voici le rythme d'un jour de voyage.",
+    "steps": [
+     {
+      "k": "Aube",
+      "t": "Le thé avant le soleil",
+      "p": "Le camp se réveille doucement. Le thé chauffe sur les braises pendant que la lumière monte sur les dunes.",
+      "img": "assets/img/tent-sunrise.jpg"
+     },
+     {
+      "k": "Matin",
+      "t": "La piste",
+      "p": "Les 4x4 quittent le bivouac. On s'arrête souvent : une arche, une trace, un point de vue que le chauffeur connaît.",
+      "img": "assets/img/jeeps.jpg"
+     },
+     {
+      "k": "Midi",
+      "t": "L'ombre et le repos",
+      "p": "Déjeuner préparé sur place à l'abri d'un rocher, puis la sieste. Le désert se vit aussi à l'arrêt.",
+      "img": "assets/img/cave-arch.jpg"
+     },
+     {
+      "k": "Soir",
+      "t": "Le feu",
+      "p": "On monte sur la dune pour le coucher du soleil. Au retour, le pain cuit dans le sable et la guitare sort.",
+      "img": "assets/img/fire.jpg"
+     },
+     {
+      "k": "Nuit",
+      "t": "Le ciel",
+      "p": "Aucune lumière à des kilomètres. On s'endort dehors ou sous la tente, sous un ciel que l'on ne voit plus en ville.",
+      "img": "assets/img/sky.jpg"
+     }
+    ]
+   },
+   "en": {
+    "h": "A day in the desert",
+    "p": "From the first tea to the starry sky, this is the rhythm of a day on the road.",
+    "steps": [
+     {
+      "k": "Dawn",
+      "t": "Tea before the sun",
+      "p": "The camp wakes up slowly. Tea warms on the embers while the light rises over the dunes.",
+      "img": "assets/img/tent-sunrise.jpg"
+     },
+     {
+      "k": "Morning",
+      "t": "The track",
+      "p": "The 4x4s leave camp. We stop often: an arch, a trail, a viewpoint only the driver knows.",
+      "img": "assets/img/jeeps.jpg"
+     },
+     {
+      "k": "Noon",
+      "t": "Shade and rest",
+      "p": "Lunch is cooked on the spot in the shelter of a rock, then a nap. The desert is also lived standing still.",
+      "img": "assets/img/cave-arch.jpg"
+     },
+     {
+      "k": "Evening",
+      "t": "The fire",
+      "p": "We climb the dune for sunset. Back at camp, bread bakes in the sand and the guitar comes out.",
+      "img": "assets/img/fire.jpg"
+     },
+     {
+      "k": "Night",
+      "t": "The sky",
+      "p": "No light for miles. You fall asleep outside or in your tent, under a sky cities no longer show.",
+      "img": "assets/img/sky.jpg"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "about",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "hero_img": "assets/img/group-dune.jpg",
+   "fr": {
+    "h": "Une rencontre avec Djanet devenue un métier",
+    "lead": "Touring with Mina est née d'un coup de cœur : celui de Mina pour Djanet, ses paysages et les familles qui y vivent.",
+    "blocks": [
+     {
+      "t": "L'histoire",
+      "p": "Mina découvre Djanet en voyageuse. Elle y revient, encore et encore, jusqu'à en faire son quotidien : accueillir des voyageurs du monde entier et leur faire vivre le désert comme elle l'a découvert, de l'intérieur.",
+      "img": "assets/img/mina.jpg"
+     },
+     {
+      "t": "L'équipe Imouhagh",
+      "p": "Guides, chauffeurs, cuisiniers et musiciens : l'équipe est touarègue et connaît le Tassili depuis l'enfance. Mina les appelle sa famille. Ce sont eux qui ouvrent les pistes, allument le feu et racontent chaque lieu.",
+      "img": "assets/img/group-tea.jpg"
+     },
+     {
+      "t": "Notre façon de voyager",
+      "p": "Des petits groupes, un rythme choisi avec vous, et le respect des lieux et des habitants. On ne laisse rien derrière nous, et on prend le temps de rencontrer ceux qui vivent ici.",
+      "img": "assets/img/camel.jpg"
+     }
+    ],
+    "values_h": "Ce à quoi nous tenons",
+    "langs": "Nous vous répondons en français, en anglais et en arabe.",
+    "values": [
+     {
+      "t": "Sur mesure",
+      "p": "Chaque voyage est construit avec vous, selon vos dates, votre rythme et votre groupe."
+     },
+     {
+      "t": "Accompagnement",
+      "p": "Mina reste votre interlocutrice, de la première question jusqu'au retour à l'aéroport."
+     },
+     {
+      "t": "Respect",
+      "p": "Des lieux, de la culture touarègue et des familles qui nous reçoivent."
+     },
+     {
+      "t": "Sécurité",
+      "p": "Des chauffeurs expérimentés, des véhicules entretenus et des itinéraires que nous connaissons."
+     }
+    ],
+    "proc_h": "Comment se prépare votre voyage",
+    "proc_p": "Quatre étapes, un seul interlocuteur.",
+    "proc": [
+     {
+      "t": "Vous nous écrivez",
+      "p": "Par le formulaire, WhatsApp ou e-mail : vos dates, votre groupe, vos envies."
+     },
+     {
+      "t": "Mina vous répond",
+      "p": "Sous 24 heures, avec un programme adapté et un devis clair."
+     },
+     {
+      "t": "Nous préparons tout",
+      "p": "Dossier de visa, transferts, équipe, véhicules et matériel de bivouac."
+     },
+     {
+      "t": "Accueil à Djanet",
+      "p": "L'équipe vous attend à l'aéroport. Le voyage commence dès la sortie de l'avion."
+     }
+    ]
+   },
+   "en": {
+    "h": "A meeting with Djanet that became a calling",
+    "lead": "Touring with Mina began with a crush: Mina's love for Djanet, its landscapes and the families who live there.",
+    "blocks": [
+     {
+      "t": "The story",
+      "p": "Mina first came to Djanet as a traveller. She came back again and again, until it became her daily life: welcoming travellers from all over the world and letting them experience the desert the way she did, from the inside.",
+      "img": "assets/img/mina.jpg"
+     },
+     {
+      "t": "The Imouhagh team",
+      "p": "Guides, drivers, cooks and musicians: the team is Tuareg and has known the Tassili since childhood. Mina calls them her family. They open the tracks, light the fire and tell the story of each place.",
+      "img": "assets/img/group-tea.jpg"
+     },
+     {
+      "t": "Our way of travelling",
+      "p": "Small groups, a pace chosen with you, and respect for places and people. We leave nothing behind, and we take time to meet those who live here.",
+      "img": "assets/img/camel.jpg"
+     }
+    ],
+    "values_h": "What we care about",
+    "langs": "We reply in French, English and Arabic.",
+    "values": [
+     {
+      "t": "Tailor-made",
+      "p": "Every trip is built with you, around your dates, your pace and your group."
+     },
+     {
+      "t": "Support",
+      "p": "Mina remains your contact, from the first question to the ride back to the airport."
+     },
+     {
+      "t": "Respect",
+      "p": "For places, for Tuareg culture and for the families who host us."
+     },
+     {
+      "t": "Safety",
+      "p": "Experienced drivers, maintained vehicles and routes we know well."
+     }
+    ],
+    "proc_h": "How your trip is prepared",
+    "proc_p": "Four steps, one person to talk to.",
+    "proc": [
+     {
+      "t": "You write to us",
+      "p": "Through the form, WhatsApp or e-mail: your dates, your group, your wishes."
+     },
+     {
+      "t": "Mina replies",
+      "p": "Within 24 hours, with a tailored programme and a clear quote."
+     },
+     {
+      "t": "We prepare everything",
+      "p": "Visa file, transfers, team, vehicles and camping equipment."
+     },
+     {
+      "t": "Welcome in Djanet",
+      "p": "The team waits for you at the airport. The trip starts as you leave the plane."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "trips",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "hero_img": "assets/img/tadrart-camp.jpg",
+   "fr": {
+    "h": "Nos circuits à Djanet",
+    "p": "Six voyages, tous adaptables. Transferts, 4x4, pension complète, guide local et matériel de bivouac sont compris.",
+    "included": [
+     "Transferts aéroport de Djanet",
+     "4x4 avec chauffeur",
+     "Guide local Imouhagh",
+     "Pension complète et eau",
+     "Matériel de bivouac",
+     "Assistance pour le visa"
+    ],
+    "not_included": [
+     "Vols internationaux et intérieurs",
+     "Frais de visa",
+     "Assurance voyage",
+     "Dépenses personnelles"
+    ]
+   },
+   "en": {
+    "h": "Our tours in Djanet",
+    "p": "Six journeys, all adaptable. Transfers, 4x4, full board, local guide and camping gear are included.",
+    "included": [
+     "Djanet airport transfers",
+     "4x4 with driver",
+     "Local Imouhagh guide",
+     "Full board and water",
+     "Camping equipment",
+     "Visa assistance"
+    ],
+    "not_included": [
+     "International and domestic flights",
+     "Visa fees",
+     "Travel insurance",
+     "Personal expenses"
+    ]
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "destinations",
+  "position": 5,
+  "published": 1,
+  "data": {
+   "hero_img": "assets/img/peaks.jpg",
+   "fr": {
+    "h": "Les lieux que nous vous faisons vivre",
+    "p": "Cinq paysages autour de Djanet, cinq façons de découvrir le Sahara."
+   },
+   "en": {
+    "h": "The places we take you to",
+    "p": "Five landscapes around Djanet, five ways to discover the Sahara."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "gallery",
+  "position": 6,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Galerie",
+    "p": "Djanet, la Tadrart et le Tassili, photographiés pendant nos voyages.",
+    "filters": [
+     {
+      "k": "all",
+      "t": "Tout"
+     },
+     {
+      "k": "land",
+      "t": "Paysages"
+     },
+     {
+      "k": "people",
+      "t": "Rencontres"
+     },
+     {
+      "k": "camp",
+      "t": "Bivouac"
+     }
+    ]
+   },
+   "en": {
+    "h": "Gallery",
+    "p": "Djanet, the Tadrart and the Tassili, photographed during our trips.",
+    "filters": [
+     {
+      "k": "all",
+      "t": "All"
+     },
+     {
+      "k": "land",
+      "t": "Landscapes"
+     },
+     {
+      "k": "people",
+      "t": "Encounters"
+     },
+     {
+      "k": "camp",
+      "t": "Camp life"
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "blog",
+  "position": 7,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Le blog du désert",
+    "p": "Conseils, saisons et récits pour préparer votre voyage à Djanet."
+   },
+   "en": {
+    "h": "Desert journal",
+    "p": "Advice, seasons and stories to plan your trip to Djanet."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "faq",
+  "position": 8,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Vos questions avant de partir",
+    "p": "Les réponses aux questions que l'on nous pose le plus souvent.",
+    "more": "Une autre question ?",
+    "more_p": "Écrivez à Mina, elle vous répond personnellement."
+   },
+   "en": {
+    "h": "Your questions before you go",
+    "p": "Answers to the questions we are asked most often.",
+    "more": "Another question?",
+    "more_p": "Write to Mina, she answers personally."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "contact",
+  "position": 9,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Parlons de votre voyage",
+    "p": "Une question, une date en tête ou une simple envie de désert : écrivez-nous, Mina répond personnellement sous 24 heures.",
+    "wa": "WhatsApp",
+    "tel": "Téléphone",
+    "mail": "E-mail",
+    "where": "Où nous trouver",
+    "where_v": "Djanet, wilaya de Djanet, Algérie",
+    "langs": "Français, anglais, arabe",
+    "langs_l": "Langues",
+    "form_h": "Un message rapide",
+    "name": "Votre nom",
+    "msg": "Votre message",
+    "send_wa": "Envoyer par WhatsApp",
+    "send_mail": "Envoyer par e-mail",
+    "full": "Pour un devis précis, utilisez plutôt la",
+    "full_l": "demande de réservation détaillée",
+    "hello": "Bonjour Mina,",
+    "map": "Carte de Djanet",
+    "saved": "Message enregistré. Mina vous répond très vite."
+   },
+   "en": {
+    "h": "Let's talk about your trip",
+    "p": "A question, a date in mind or simply a wish for the desert: write to us, Mina answers personally within 24 hours.",
+    "wa": "WhatsApp",
+    "tel": "Phone",
+    "mail": "E-mail",
+    "where": "Where to find us",
+    "where_v": "Djanet, Djanet province, Algeria",
+    "langs": "French, English, Arabic",
+    "langs_l": "Languages",
+    "form_h": "A quick message",
+    "name": "Your name",
+    "msg": "Your message",
+    "send_wa": "Send via WhatsApp",
+    "send_mail": "Send by e-mail",
+    "full": "For a precise quote, please use the",
+    "full_l": "detailed booking request",
+    "hello": "Hello Mina,",
+    "map": "Map of Djanet",
+    "saved": "Message saved. Mina will reply very soon."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "reviews",
+  "position": 10,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Avis de nos voyageurs",
+    "p": "Ce que racontent ceux qui sont partis avec nous. Vous avez voyagé avec Mina ? Laissez votre avis.",
+    "form_h": "Laisser un avis",
+    "name": "Votre prénom",
+    "origin": "Votre pays",
+    "trip": "Votre circuit",
+    "rating": "Votre note",
+    "text": "Votre avis",
+    "send": "Envoyer mon avis",
+    "thanks": "Merci ! Votre avis sera publié après relecture.",
+    "error": "Merci de remplir votre prénom, votre note et votre avis.",
+    "empty": "Les premiers avis arrivent bientôt."
+   },
+   "en": {
+    "h": "Reviews from our travellers",
+    "p": "What those who travelled with us say. Did you travel with Mina? Leave a review.",
+    "form_h": "Leave a review",
+    "name": "Your first name",
+    "origin": "Your country",
+    "trip": "Your tour",
+    "rating": "Your rating",
+    "text": "Your review",
+    "send": "Send my review",
+    "thanks": "Thank you! Your review will be published after moderation.",
+    "error": "Please fill in your first name, rating and review.",
+    "empty": "The first reviews are coming soon."
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "infos",
+  "position": 11,
+  "published": 1,
+  "data": {
+   "visa_src": "https://news.radioalgerie.dz/fr/node/19452",
+   "fr": {
+    "h": "Préparer votre voyage à Djanet",
+    "p": "Visa, vols, saison, bagages : l'essentiel à savoir avant de partir. Mina vous confirme chaque point avant le départ.",
+    "note": "Les formalités peuvent changer. Nous vous confirmons les conditions en vigueur au moment de votre réservation.",
+    "secs": [
+     {
+      "id": "visa",
+      "t": "Visa",
+      "ps": [
+       "Depuis 2023, les voyageurs étrangers qui visitent le Sud algérien avec une agence de voyages algérienne agréée peuvent obtenir leur visa à l'arrivée, sans passer par le consulat.",
+       "La demande est préparée avant votre départ à partir de votre passeport et de votre programme. Le visa est délivré à l'aéroport pour la durée du voyage, dans la limite de 30 jours. Les frais se règlent sur place."
+      ],
+      "li": [
+       "Passeport valide au moins six mois après le retour",
+       "Copie du passeport envoyée à la réservation",
+       "Programme et dates confirmés avant le dépôt du dossier"
+      ]
+     },
+     {
+      "id": "vols",
+      "t": "Venir à Djanet",
+      "ps": [
+       "Djanet possède son aéroport (code DJG). On y arrive par un vol intérieur depuis Alger avec Air Algérie.",
+       "Pendant la saison saharienne, un vol direct Paris-Djanet a été proposé certaines années. Nous vous indiquons les options ouvertes à vos dates."
+      ],
+      "li": [
+       "Transfert aéroport compris, à toute heure",
+       "Arrivées de nuit fréquentes : l'équipe vous attend",
+       "Prévoyez une marge pour la correspondance à Alger"
+      ]
+     },
+     {
+      "id": "saison",
+      "t": "Quand partir",
+      "ps": [
+       "La saison va d'octobre à avril. Le reste de l'année, la chaleur rend le voyage difficile."
+      ],
+      "li": []
+     },
+     {
+      "id": "sac",
+      "t": "Dans votre sac",
+      "ps": [
+       "Le matériel de bivouac est fourni. Il vous reste à prévoir vos affaires personnelles, dans un sac souple plutôt qu'une valise rigide."
+      ],
+      "li": [
+       "Vêtements chauds pour la nuit en hiver",
+       "Chèche ou chapeau, lunettes, crème solaire",
+       "Chaussures de marche légères et sandales",
+       "Lampe frontale et batterie externe",
+       "Sac de couchage chaud (fourni sur demande)",
+       "Médicaments personnels"
+      ]
+     },
+     {
+      "id": "argent",
+      "t": "Argent et réseau",
+      "ps": [
+       "La monnaie est le dinar algérien. Les paiements se font surtout en espèces, et les distributeurs sont rares à Djanet : prévoyez votre change avant d'arriver.",
+       "Il y a du réseau à Djanet. Dans la Tadrart et sur le plateau, il n'y en a pas : prévenez vos proches avant de partir en piste."
+      ],
+      "li": []
+     },
+     {
+      "id": "sante",
+      "t": "Santé et sécurité",
+      "ps": [
+       "Les voyages dans le Sud sont encadrés par une équipe locale qui connaît les pistes. Nous vous conseillons une assurance voyage couvrant l'assistance et le rapatriement.",
+       "Buvez régulièrement, protégez-vous du soleil et signalez-nous tout traitement ou allergie à la réservation."
+      ],
+      "li": []
+     }
+    ],
+    "seasons": [
+     {
+      "t": "Octobre à novembre",
+      "p": "Journées chaudes, nuits douces. Belle lumière et début de saison."
+     },
+     {
+      "t": "Décembre à février",
+      "p": "Journées agréables, nuits froides, parfois proches de zéro. La haute saison."
+     },
+     {
+      "t": "Mars à avril",
+      "p": "Les températures remontent. Dernières semaines avant la chaleur."
+     },
+     {
+      "t": "Mai à septembre",
+      "p": "Très chaud. Nous ne recommandons pas le voyage."
+     }
+    ]
+   },
+   "en": {
+    "h": "Preparing your trip to Djanet",
+    "p": "Visa, flights, season, luggage: what to know before you leave. Mina confirms every point before departure.",
+    "note": "Formalities can change. We confirm the rules in force when you book.",
+    "secs": [
+     {
+      "id": "visa",
+      "t": "Visa",
+      "ps": [
+       "Since 2023, foreign travellers visiting southern Algeria with a licensed Algerian travel agency can get their visa on arrival, without going through the consulate.",
+       "The request is prepared before you leave, from your passport and programme. The visa is issued at the airport for the length of the trip, up to 30 days. Fees are paid on the spot."
+      ],
+      "li": [
+       "Passport valid at least six months after your return",
+       "Passport copy sent when booking",
+       "Programme and dates confirmed before the file is submitted"
+      ]
+     },
+     {
+      "id": "vols",
+      "t": "Getting to Djanet",
+      "ps": [
+       "Djanet has its own airport (code DJG). You reach it on a domestic flight from Algiers with Air Algérie.",
+       "During the Saharan season, a direct Paris-Djanet flight has operated in some years. We tell you which options are open for your dates."
+      ],
+      "li": [
+       "Airport transfer included, at any hour",
+       "Night arrivals are common: the team waits for you",
+       "Allow time for the connection in Algiers"
+      ]
+     },
+     {
+      "id": "saison",
+      "t": "When to go",
+      "ps": [
+       "The season runs from October to April. The rest of the year, the heat makes travel difficult."
+      ],
+      "li": []
+     },
+     {
+      "id": "sac",
+      "t": "In your bag",
+      "ps": [
+       "Camping equipment is provided. You only need your personal belongings, in a soft bag rather than a hard suitcase."
+      ],
+      "li": [
+       "Warm clothes for winter nights",
+       "Scarf or hat, sunglasses, sunscreen",
+       "Light walking shoes and sandals",
+       "Head torch and power bank",
+       "Warm sleeping bag (provided on request)",
+       "Personal medication"
+      ]
+     },
+     {
+      "id": "argent",
+      "t": "Money and network",
+      "ps": [
+       "The currency is the Algerian dinar. Most payments are in cash and ATMs are rare in Djanet: change money before you arrive.",
+       "There is phone coverage in Djanet. In the Tadrart and on the plateau there is none: tell your family before you head out."
+      ],
+      "li": []
+     },
+     {
+      "id": "sante",
+      "t": "Health and safety",
+      "ps": [
+       "Trips in the South are led by a local team who know the tracks. We recommend travel insurance covering assistance and repatriation.",
+       "Drink regularly, protect yourself from the sun and tell us about any treatment or allergy when booking."
+      ],
+      "li": []
+     }
+    ],
+    "seasons": [
+     {
+      "t": "October to November",
+      "p": "Warm days, mild nights. Beautiful light and the start of the season."
+     },
+     {
+      "t": "December to February",
+      "p": "Pleasant days, cold nights, sometimes close to freezing. High season."
+     },
+     {
+      "t": "March to April",
+      "p": "Temperatures rise again. The last weeks before the heat."
+     },
+     {
+      "t": "May to September",
+      "p": "Very hot. We do not recommend travelling."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "page",
+  "slug": "booking",
+  "position": 12,
+  "published": 1,
+  "data": {
+   "fr": {
+    "h": "Demande de réservation",
+    "p": "Cinq étapes, deux minutes. Mina vous répond personnellement avec un programme et un devis.",
+    "steps": [
+     "Le voyage",
+     "Les voyageurs",
+     "Formalités",
+     "Préférences",
+     "Coordonnées"
+    ],
+    "next": "Continuer",
+    "prev": "Retour",
+    "sum_h": "Votre demande",
+    "sum_empty": "Vos choix apparaîtront ici.",
+    "f": {
+     "trip": "Quel circuit vous intéresse ?",
+     "unsure": "Je ne sais pas encore",
+     "when": "Quand souhaitez-vous partir ?",
+     "arrival": "Date d'arrivée souhaitée",
+     "flexible": "Mes dates sont flexibles",
+     "month": "Ou choisissez un mois",
+     "length": "Durée souhaitée",
+     "lengths": [
+      "Selon le circuit",
+      "3 à 4 jours",
+      "5 à 7 jours",
+      "8 jours et plus"
+     ],
+     "adults": "Adultes",
+     "kids": "Enfants",
+     "kids_ages": "Âge des enfants",
+     "nationality": "Nationalité",
+     "country": "Pays de résidence",
+     "city": "Ville de départ",
+     "group_type": "Vous voyagez",
+     "group_types": [
+      "En couple",
+      "En famille",
+      "Entre amis",
+      "Seul(e)",
+      "En groupe organisé"
+     ],
+     "visa": "Avez-vous un visa pour l'Algérie ?",
+     "visas": [
+      "Oui, je l'ai déjà",
+      "Non, j'ai besoin d'aide",
+      "Je n'en ai pas besoin",
+      "Je ne sais pas"
+     ],
+     "passport": "Votre passeport est valable plus de 6 mois après le voyage",
+     "flight": "Vol vers Djanet",
+     "flights": [
+      "Déjà réservé",
+      "À réserver, conseillez-moi",
+      "Je m'en occupe"
+     ],
+     "insurance": "J'ai une assurance voyage",
+     "stay": "Hébergement",
+     "stays": [
+      "Bivouac sous tente",
+      "Bivouac confort",
+      "Maison d'hôtes à Djanet + bivouac"
+     ],
+     "fitness": "Niveau de marche",
+     "fitnesses": [
+      "Tranquille",
+      "Moyen",
+      "Sportif"
+     ],
+     "guide": "Langue du guide",
+     "guides": [
+      "Français",
+      "English",
+      "العربية"
+     ],
+     "diet": "Régime alimentaire ou allergies",
+     "occasion": "Occasion particulière",
+     "occasions": [
+      "Aucune",
+      "Lune de miel",
+      "Anniversaire",
+      "Voyage photo",
+      "Retraite"
+     ],
+     "budget": "Budget par personne (facultatif)",
+     "budgets": [
+      "À définir ensemble",
+      "Économique",
+      "Confort",
+      "Haut de gamme"
+     ],
+     "name": "Nom complet",
+     "email": "E-mail",
+     "phone": "WhatsApp ou téléphone",
+     "pref": "Je préfère être contacté par",
+     "prefs": [
+      "WhatsApp",
+      "E-mail",
+      "Téléphone"
+     ],
+     "msg": "Un mot pour Mina",
+     "consent": "J'accepte d'être recontacté au sujet de ma demande"
+    },
+    "err": "Remplissez les champs indiqués pour continuer.",
+    "wa": "Envoyer sur WhatsApp",
+    "mail": "Envoyer par e-mail",
+    "subject": "Demande de réservation",
+    "hello": "Bonjour Mina, voici ma demande de réservation.",
+    "direct": "Ou contactez Mina directement",
+    "months": [
+     "Octobre",
+     "Novembre",
+     "Décembre",
+     "Janvier",
+     "Février",
+     "Mars",
+     "Avril"
+    ],
+    "yes": "oui",
+    "no": "non",
+    "done_h": "Votre demande est prête",
+    "done_p": "Choisissez comment l'envoyer à Mina.",
+    "saved": "Votre demande a bien été enregistrée. Mina vous répond sous 24 heures."
+   },
+   "en": {
+    "h": "Booking request",
+    "p": "Five steps, two minutes. Mina replies personally with an itinerary and a quote.",
+    "steps": [
+     "The trip",
+     "Travellers",
+     "Formalities",
+     "Preferences",
+     "Contact"
+    ],
+    "next": "Continue",
+    "prev": "Back",
+    "sum_h": "Your request",
+    "sum_empty": "Your choices will appear here.",
+    "f": {
+     "trip": "Which tour are you interested in?",
+     "unsure": "Not sure yet",
+     "when": "When would you like to travel?",
+     "arrival": "Preferred arrival date",
+     "flexible": "My dates are flexible",
+     "month": "Or pick a month",
+     "length": "Preferred length",
+     "lengths": [
+      "As per the tour",
+      "3 to 4 days",
+      "5 to 7 days",
+      "8 days or more"
+     ],
+     "adults": "Adults",
+     "kids": "Children",
+     "kids_ages": "Children's ages",
+     "nationality": "Nationality",
+     "country": "Country of residence",
+     "city": "Departure city",
+     "group_type": "You are travelling",
+     "group_types": [
+      "As a couple",
+      "With family",
+      "With friends",
+      "Solo",
+      "In an organised group"
+     ],
+     "visa": "Do you have a visa for Algeria?",
+     "visas": [
+      "Yes, I already have it",
+      "No, I need help",
+      "I don't need one",
+      "I don't know"
+     ],
+     "passport": "Your passport is valid for more than 6 months after the trip",
+     "flight": "Flight to Djanet",
+     "flights": [
+      "Already booked",
+      "To book, please advise",
+      "I'll handle it"
+     ],
+     "insurance": "I have travel insurance",
+     "stay": "Accommodation",
+     "stays": [
+      "Tented camp",
+      "Comfort camp",
+      "Guesthouse in Djanet + camp"
+     ],
+     "fitness": "Walking level",
+     "fitnesses": [
+      "Easy",
+      "Moderate",
+      "Active"
+     ],
+     "guide": "Guide language",
+     "guides": [
+      "Français",
+      "English",
+      "العربية"
+     ],
+     "diet": "Diet or allergies",
+     "occasion": "Special occasion",
+     "occasions": [
+      "None",
+      "Honeymoon",
+      "Birthday",
+      "Photo trip",
+      "Retreat"
+     ],
+     "budget": "Budget per person (optional)",
+     "budgets": [
+      "To define together",
+      "Budget",
+      "Comfort",
+      "Premium"
+     ],
+     "name": "Full name",
+     "email": "Email",
+     "phone": "WhatsApp or phone",
+     "pref": "I prefer to be contacted by",
+     "prefs": [
+      "WhatsApp",
+      "Email",
+      "Phone"
+     ],
+     "msg": "A note for Mina",
+     "consent": "I agree to be contacted about my request"
+    },
+    "err": "Fill in the highlighted fields to continue.",
+    "wa": "Send on WhatsApp",
+    "mail": "Send by email",
+    "subject": "Booking request",
+    "hello": "Hello Mina, here is my booking request.",
+    "direct": "Or contact Mina directly",
+    "months": [
+     "October",
+     "November",
+     "December",
+     "January",
+     "February",
+     "March",
+     "April"
+    ],
+    "yes": "yes",
+    "no": "no",
+    "done_h": "Your request is ready",
+    "done_p": "Choose how to send it to Mina.",
+    "saved": "Your request has been saved. Mina will reply within 24 hours."
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "tadrart-rouge",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tadrart-camp.jpg",
+   "imgs": [
+    "assets/img/tadrart-rocks.jpg",
+    "assets/img/tadrart-walker.jpg",
+    "assets/img/tents.jpg"
+   ],
+   "d": 6,
+   "n": 5,
+   "price": "",
+   "fr": {
+    "t": "Tadrart Rouge",
+    "s": "Le grand classique : dunes couleur braise, arches de grès et gravures millénaires, jusqu'aux portes de la Libye.",
+    "level": "Facile",
+    "season": "Octobre à avril",
+    "group": "2 à 12 personnes",
+    "tags": [
+     "Dunes rouges",
+     "Arches",
+     "Gravures"
+    ],
+    "p": [
+     {
+      "t": "Arrivée à Djanet",
+      "p": "Accueil à l'aéroport, musée de Djanet et marché local, nuit au campement."
+     },
+     {
+      "t": "Route vers la Tadrart",
+      "p": "Piste vers le sud-est par Tikoubaouine, premier bivouac."
+     },
+     {
+      "t": "Oued In Djerane",
+      "p": "Gravures rupestres et canyons de grès rouge."
+     },
+     {
+      "t": "Tin Merzouga",
+      "p": "Le cœur de la Tadrart : une mer de dunes rouges."
+     },
+     {
+      "t": "Moul n'Aga et les arches",
+      "p": "Arches naturelles et peintures rupestres."
+     },
+     {
+      "t": "Retour à Djanet",
+      "p": "Dernier thé dans les dunes, transfert à l'aéroport."
+     }
+    ]
+   },
+   "en": {
+    "t": "Red Tadrart",
+    "s": "The great classic: ember-coloured dunes, sandstone arches and ancient carvings, up to the Libyan border.",
+    "level": "Easy",
+    "season": "October to April",
+    "group": "2 to 12 people",
+    "tags": [
+     "Red dunes",
+     "Arches",
+     "Rock art"
+    ],
+    "p": [
+     {
+      "t": "Arrival in Djanet",
+      "p": "Airport welcome, Djanet museum and local market, night at camp."
+     },
+     {
+      "t": "Road to the Tadrart",
+      "p": "South-east track via Tikoubaouine, first camp."
+     },
+     {
+      "t": "Oued In Djerane",
+      "p": "Rock carvings and red sandstone canyons."
+     },
+     {
+      "t": "Tin Merzouga",
+      "p": "The heart of the Tadrart: a sea of red dunes."
+     },
+     {
+      "t": "Moul n'Aga and the arches",
+      "p": "Natural arches and rock paintings."
+     },
+     {
+      "t": "Back to Djanet",
+      "p": "A last tea in the dunes, airport transfer."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "ihrir-essendilene",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "img": "assets/img/ihrir-lake.jpg",
+   "imgs": [
+    "assets/img/essendilene-1.jpg",
+    "assets/img/ihrir-guelta.jpg",
+    "assets/img/huts.jpg"
+   ],
+   "d": 4,
+   "n": 3,
+   "price": "",
+   "fr": {
+    "t": "Ihrir et Essendilène",
+    "s": "Les sources cachées du Tassili : un lac entre les falaises, des palmiers et le canyon préféré de Mina.",
+    "level": "Facile",
+    "season": "Octobre à avril",
+    "group": "2 à 10 personnes",
+    "tags": [
+     "Guelta",
+     "Canyons",
+     "Oasis"
+    ],
+    "p": [
+     {
+      "t": "Djanet et la palmeraie",
+      "p": "Accueil, balade dans la palmeraie, dîner traditionnel."
+     },
+     {
+      "t": "Canyon d'Essendilène",
+      "p": "Marche dans les gorges jusqu'à la guelta."
+     },
+     {
+      "t": "Vallée d'Ihrir",
+      "p": "Lac permanent, cases en pierre et baignade."
+     },
+     {
+      "t": "Retour",
+      "p": "Lever de soleil sur le plateau, retour à Djanet."
+     }
+    ]
+   },
+   "en": {
+    "t": "Ihrir and Essendilène",
+    "s": "The hidden springs of the Tassili: a lake between cliffs, palm trees and Mina's favourite canyon.",
+    "level": "Easy",
+    "season": "October to April",
+    "group": "2 to 10 people",
+    "tags": [
+     "Guelta",
+     "Canyons",
+     "Oasis"
+    ],
+    "p": [
+     {
+      "t": "Djanet and the palm grove",
+      "p": "Welcome, walk in the palm grove, traditional dinner."
+     },
+     {
+      "t": "Essendilène canyon",
+      "p": "Hike through the gorges to the guelta."
+     },
+     {
+      "t": "Ihrir valley",
+      "p": "A permanent lake, stone huts and a swim."
+     },
+     {
+      "t": "Return",
+      "p": "Sunrise on the plateau, back to Djanet."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "trek-tassili",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tassili-1.jpg",
+   "imgs": [
+    "assets/img/tassili-spires.jpg",
+    "assets/img/rock-art.jpg",
+    "assets/img/giraffe.jpg"
+   ],
+   "d": 7,
+   "n": 6,
+   "price": "",
+   "fr": {
+    "t": "Trek du Tassili",
+    "s": "Montée à pied sur le plateau, avec des ânes porteurs, jusqu'à la cité de pierre de Sefar.",
+    "level": "Sportif",
+    "season": "Octobre à mars",
+    "group": "2 à 8 personnes",
+    "tags": [
+     "Trek",
+     "Sefar",
+     "Art rupestre"
+    ],
+    "p": [
+     {
+      "t": "Arrivée",
+      "p": "Accueil à Djanet et préparation du trek."
+     },
+     {
+      "t": "Montée du col",
+      "p": "Ascension du plateau avec l'équipe et les ânes."
+     },
+     {
+      "t": "Tamrit",
+      "p": "Cyprès millénaires et premières fresques."
+     },
+     {
+      "t": "Sefar",
+      "p": "La cité de pierre et ses peintures."
+     },
+     {
+      "t": "Sefar, jour libre",
+      "p": "Exploration des abris peints."
+     },
+     {
+      "t": "Descente",
+      "p": "Retour vers la vallée, dernier bivouac."
+     },
+     {
+      "t": "Retour à Djanet",
+      "p": "Transfert à l'aéroport."
+     }
+    ]
+   },
+   "en": {
+    "t": "Tassili Trek",
+    "s": "A climb on foot onto the plateau, with pack donkeys, to the stone city of Sefar.",
+    "level": "Active",
+    "season": "October to March",
+    "group": "2 to 8 people",
+    "tags": [
+     "Trek",
+     "Sefar",
+     "Rock art"
+    ],
+    "p": [
+     {
+      "t": "Arrival",
+      "p": "Welcome in Djanet and trek briefing."
+     },
+     {
+      "t": "Up the pass",
+      "p": "Climb to the plateau with the team and donkeys."
+     },
+     {
+      "t": "Tamrit",
+      "p": "Ancient cypresses and the first frescoes."
+     },
+     {
+      "t": "Sefar",
+      "p": "The stone city and its paintings."
+     },
+     {
+      "t": "Sefar, free day",
+      "p": "Exploring the painted shelters."
+     },
+     {
+      "t": "Descent",
+      "p": "Back to the valley, last camp."
+     },
+     {
+      "t": "Back to Djanet",
+      "p": "Airport transfer."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "djanet-en-famille",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "img": "assets/img/kid-cave.jpg",
+   "imgs": [
+    "assets/img/kid-water.jpg",
+    "assets/img/green-dune.jpg",
+    "assets/img/breakfast.jpg"
+   ],
+   "d": 4,
+   "n": 3,
+   "price": "",
+   "fr": {
+    "t": "Djanet en famille",
+    "s": "Un voyage à hauteur d'enfant : canyons, gravures sous les pieds et glissades dans les dunes.",
+    "level": "Très facile",
+    "season": "Octobre à avril",
+    "group": "Familles",
+    "tags": [
+     "Enfants",
+     "Rythme doux",
+     "Dunes"
+    ],
+    "p": [
+     {
+      "t": "Bienvenue à Djanet",
+      "p": "Arrivée, palmeraie et goûter traditionnel."
+     },
+     {
+      "t": "Canyon d'Idaren",
+      "p": "Balade facile et pique-nique."
+     },
+     {
+      "t": "Tin Taghirt",
+      "p": "Gravures au sol, jeux dans les dunes, bivouac."
+     },
+     {
+      "t": "Retour",
+      "p": "Lever de soleil et retour en douceur."
+     }
+    ]
+   },
+   "en": {
+    "t": "Djanet with family",
+    "s": "A trip at a child's pace: canyons, carvings underfoot and sliding down the dunes.",
+    "level": "Very easy",
+    "season": "October to April",
+    "group": "Families",
+    "tags": [
+     "Kids",
+     "Gentle pace",
+     "Dunes"
+    ],
+    "p": [
+     {
+      "t": "Welcome to Djanet",
+      "p": "Arrival, palm grove and traditional snack."
+     },
+     {
+      "t": "Idaren canyon",
+      "p": "An easy walk and a picnic."
+     },
+     {
+      "t": "Tin Taghirt",
+      "p": "Carvings on the ground, dune games, camp."
+     },
+     {
+      "t": "Return",
+      "p": "Sunrise and a gentle way back."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "festival-sebiba",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "img": "assets/img/sebiba-2.jpg",
+   "imgs": [
+    "assets/img/blue-turban.jpg",
+    "assets/img/jewels.jpg",
+    "assets/img/tuareg-woman.jpg"
+   ],
+   "d": 5,
+   "n": 4,
+   "price": "",
+   "fr": {
+    "t": "Festival de la Sebiba",
+    "s": "La grande fête des Imouhagh de Djanet, vécue aux côtés des familles des ksour.",
+    "level": "Facile",
+    "season": "Dates de l'Achoura",
+    "group": "2 à 12 personnes",
+    "tags": [
+     "Culture",
+     "Achoura",
+     "Patrimoine UNESCO"
+    ],
+    "p": [
+     {
+      "t": "Arrivée",
+      "p": "Accueil et rencontre avec les familles."
+     },
+     {
+      "t": "Timoulaouine",
+      "p": "Répétitions des chants et des danses."
+     },
+     {
+      "t": "Jour de la Sebiba",
+      "p": "Le rituel de l'Achoura, entre El Mizan et Zelouaz."
+     },
+     {
+      "t": "Erg Admer",
+      "p": "Escapade dans les dunes, bivouac."
+     },
+     {
+      "t": "Retour",
+      "p": "Transfert à l'aéroport."
+     }
+    ]
+   },
+   "en": {
+    "t": "Sebiba Festival",
+    "s": "The great festival of Djanet's Imouhagh, lived alongside the families of the ksour.",
+    "level": "Easy",
+    "season": "Ashura dates",
+    "group": "2 to 12 people",
+    "tags": [
+     "Culture",
+     "Ashura",
+     "UNESCO heritage"
+    ],
+    "p": [
+     {
+      "t": "Arrival",
+      "p": "Welcome and meeting the families."
+     },
+     {
+      "t": "Timoulawine",
+      "p": "Rehearsals of songs and dances."
+     },
+     {
+      "t": "Sebiba day",
+      "p": "The Ashura ritual, between El Mizan and Zelouaz."
+     },
+     {
+      "t": "Erg Admer",
+      "p": "A getaway into the dunes, camp."
+     },
+     {
+      "t": "Return",
+      "p": "Airport transfer."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "circuit",
+  "slug": "sur-mesure",
+  "position": 5,
+  "published": 1,
+  "data": {
+   "img": "assets/img/women-dunes.jpg",
+   "imgs": [
+    "assets/img/hero-veil.jpg",
+    "assets/img/fire.jpg",
+    "assets/img/guitar.jpg"
+   ],
+   "d": 0,
+   "n": 0,
+   "price": "",
+   "fr": {
+    "t": "Voyage sur mesure",
+    "s": "Lune de miel, groupe d'amis, voyage photo ou retraite : le programme se construit avec vous.",
+    "level": "À la carte",
+    "season": "Toute la saison",
+    "group": "Privé",
+    "tags": [
+     "Privé",
+     "Vos dates",
+     "Votre rythme"
+    ],
+    "p": [
+     {
+      "t": "Votre idée",
+      "p": "Vos envies, vos dates, votre budget."
+     },
+     {
+      "t": "Notre proposition",
+      "p": "Mina vous envoie un programme détaillé sous 24 h."
+     },
+     {
+      "t": "Votre voyage",
+      "p": "Visa, vols intérieurs, 4x4 et bivouacs sont organisés."
+     }
+    ]
+   },
+   "en": {
+    "t": "Tailor-made journey",
+    "s": "Honeymoon, friends, photo trip or retreat: the itinerary is built with you.",
+    "level": "Your choice",
+    "season": "All season",
+    "group": "Private",
+    "tags": [
+     "Private",
+     "Your dates",
+     "Your pace"
+    ],
+    "p": [
+     {
+      "t": "Your idea",
+      "p": "Your wishes, dates and budget."
+     },
+     {
+      "t": "Our proposal",
+      "p": "Mina sends a detailed itinerary within 24 hours."
+     },
+     {
+      "t": "Your trip",
+      "p": "Visa, domestic flights, 4x4 and camps are arranged."
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "destination",
+  "slug": "djanet",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "img": "assets/img/palms.jpg",
+   "img2": "assets/img/huts.jpg",
+   "word": "Djanet",
+   "circuit": "djanet-en-famille",
+   "fr": {
+    "t": "Djanet, l'oasis",
+    "s": "La porte du Tassili n'Ajjer",
+    "p": [
+     "Djanet est une oasis posée au pied du plateau du Tassili. Sa palmeraie suit l'oued, et ses vieux quartiers de pierre regardent la vallée depuis les hauteurs.",
+     "C'est ici que tout commence : on y arrive en avion, on y fait le marché, on y rencontre l'équipe avant de prendre la piste."
+    ],
+    "see": [
+     "La palmeraie et ses jardins",
+     "Les anciens ksour au-dessus de l'oued",
+     "Le marché et les artisans touaregs"
+    ],
+    "acc": "À pied et en voiture, depuis l'aéroport de Djanet."
+   },
+   "en": {
+    "t": "Djanet, the oasis",
+    "s": "Gateway to the Tassili n'Ajjer",
+    "p": [
+     "Djanet is an oasis at the foot of the Tassili plateau. Its palm grove follows the wadi, and its old stone quarters look over the valley from above.",
+     "Everything starts here: you land here, visit the market and meet the team before taking the track."
+    ],
+    "see": [
+     "The palm grove and its gardens",
+     "The old ksour above the wadi",
+     "The market and Tuareg craftsmen"
+    ],
+    "acc": "On foot and by car, from Djanet airport."
+   }
+  }
+ },
+ {
+  "type": "destination",
+  "slug": "tadrart",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tadrart-rocks.jpg",
+   "img2": "assets/img/tadrart-walker.jpg",
+   "word": "Tadrart",
+   "circuit": "tadrart-rouge",
+   "fr": {
+    "t": "La Tadrart Rouge",
+    "s": "Dunes couleur braise et arches de grès",
+    "p": [
+     "Au sud-est de Djanet, la Tadrart est un massif de grès où le sable prend des teintes rouges et orangées. Les dunes viennent buter contre les falaises.",
+     "On y roule de canyon en canyon, on y marche pieds nus dans le sable, et l'on y dort au pied des dunes."
+    ],
+    "see": [
+     "Les grandes dunes de Tin Merzouga",
+     "Les arches naturelles et Moul n'Aga",
+     "Les gravures rupestres de l'oued In Djerane"
+    ],
+    "acc": "En 4x4 depuis Djanet, avec plusieurs nuits en bivouac."
+   },
+   "en": {
+    "t": "The Red Tadrart",
+    "s": "Ember-coloured dunes and sandstone arches",
+    "p": [
+     "South-east of Djanet, the Tadrart is a sandstone massif where the sand turns red and orange. The dunes lean against the cliffs.",
+     "You drive from canyon to canyon, walk barefoot in the sand and sleep at the foot of the dunes."
+    ],
+    "see": [
+     "The great dunes of Tin Merzouga",
+     "Natural arches and Moul n'Aga",
+     "The rock engravings of Oued In Djerane"
+    ],
+    "acc": "By 4x4 from Djanet, with several nights of wild camping."
+   }
+  }
+ },
+ {
+  "type": "destination",
+  "slug": "ihrir",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "img": "assets/img/ihrir-guelta.jpg",
+   "img2": "assets/img/ihrir-oasis.jpg",
+   "word": "Ihrir",
+   "circuit": "ihrir-essendilene",
+   "fr": {
+    "t": "Ihrir",
+    "s": "L'eau au milieu du désert",
+    "p": [
+     "Ihrir est une vallée du Tassili où l'eau reste toute l'année. Des gueltas profondes se suivent entre les falaises, bordées de palmiers et de roseaux.",
+     "Le village vit de ses jardins. On s'y baigne, on y marche le long de l'eau et l'on partage le thé avec les habitants."
+    ],
+    "see": [
+     "Les gueltas permanentes",
+     "Le village et ses jardins",
+     "Les falaises au-dessus de la vallée"
+    ],
+    "acc": "En 4x4 par la route du plateau, puis à pied le long de l'eau."
+   },
+   "en": {
+    "t": "Ihrir",
+    "s": "Water in the middle of the desert",
+    "p": [
+     "Ihrir is a valley of the Tassili where water stays all year. Deep pools follow one another between cliffs, lined with palms and reeds.",
+     "The village lives from its gardens. You swim, walk along the water and share tea with the people who live there."
+    ],
+    "see": [
+     "The permanent pools",
+     "The village and its gardens",
+     "The cliffs above the valley"
+    ],
+    "acc": "By 4x4 along the plateau road, then on foot along the water."
+   }
+  }
+ },
+ {
+  "type": "destination",
+  "slug": "essendilene",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "img": "assets/img/essendilene-1.jpg",
+   "img2": "assets/img/essendilene-2.jpg",
+   "word": "Essendilène",
+   "circuit": "ihrir-essendilene",
+   "fr": {
+    "t": "Essendilène",
+    "s": "Le canyon caché",
+    "p": [
+     "L'entrée se fait à pied, entre deux parois qui se resserrent. Lauriers-roses, acacias et sable clair accompagnent la marche jusqu'à la guelta du fond.",
+     "C'est une balade facile, à l'ombre, que les familles apprécient autant que les marcheurs."
+    ],
+    "see": [
+     "Le canyon et ses parois",
+     "La guelta au bout du sentier",
+     "La végétation de l'oued"
+    ],
+    "acc": "En 4x4 jusqu'à l'entrée, puis une marche facile."
+   },
+   "en": {
+    "t": "Essendilene",
+    "s": "The hidden canyon",
+    "p": [
+     "You enter on foot, between two walls that close in. Oleanders, acacias and pale sand follow the path to the pool at the end.",
+     "It is an easy, shaded walk that families enjoy as much as hikers."
+    ],
+    "see": [
+     "The canyon and its walls",
+     "The pool at the end of the path",
+     "The vegetation of the wadi"
+    ],
+    "acc": "By 4x4 to the entrance, then an easy walk."
+   }
+  }
+ },
+ {
+  "type": "destination",
+  "slug": "tassili",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tassili-spires.jpg",
+   "img2": "assets/img/rock-art.jpg",
+   "word": "Tassili",
+   "circuit": "trek-tassili",
+   "fr": {
+    "t": "Le plateau du Tassili",
+    "s": "Forêts de pierre et peintures rupestres",
+    "p": [
+     "Au-dessus de Djanet, le plateau du Tassili n'Ajjer est inscrit au patrimoine mondial de l'UNESCO. L'érosion y a sculpté des forêts de pierre que l'on traverse comme des villes.",
+     "On y monte à pied, les bagages portés par des ânes. Les abris sous roche gardent des milliers de peintures laissées par ceux qui vivaient ici."
+    ],
+    "see": [
+     "Les cités de pierre de Sefar",
+     "Les peintures et gravures rupestres",
+     "Les cyprès du Tassili"
+    ],
+    "acc": "À pied uniquement, avec guide et ânes porteurs."
+   },
+   "en": {
+    "t": "The Tassili plateau",
+    "s": "Stone forests and rock paintings",
+    "p": [
+     "Above Djanet, the Tassili n'Ajjer plateau is a UNESCO World Heritage site. Erosion has carved stone forests you walk through like cities.",
+     "You climb on foot, with donkeys carrying the bags. Rock shelters keep thousands of paintings left by those who once lived here."
+    ],
+    "see": [
+     "The stone cities of Sefar",
+     "Rock paintings and engravings",
+     "The Tassili cypress trees"
+    ],
+    "acc": "On foot only, with a guide and pack donkeys."
+   }
+  }
+ },
+ {
+  "type": "post",
+  "slug": "que-faire-a-djanet",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "date": "2026-11-10",
+   "img": "assets/img/hero-arch.jpg",
+   "fr": {
+    "t": "Que faire à Djanet : 8 expériences à vivre dans le Sahara algérien",
+    "d": "Dunes rouges de la Tadrart, guelta d'Essendilène, gravures du Tassili : les 8 expériences à ne pas manquer à Djanet, et comment les organiser.",
+    "body": "Djanet est la porte d'entrée du [Tassili n'Ajjer, classé au patrimoine mondial de l'UNESCO](https://whc.unesco.org/fr/list/179/). Voici ce qui marque le plus nos voyageurs.\n\n## Les paysages à voir absolument\n\nLes dunes rouges de Tin Merzouga, au cœur de la [Tadrart Rouge](circuit-tadrart-rouge.html), changent de couleur à chaque heure. Le canyon d'Essendilène cache une guelta entre deux parois, et la vallée d'Ihrir un lac permanent en plein désert, deux étapes du circuit [Ihrir et Essendilène](circuit-ihrir-essendilene.html).\n\n## L'art rupestre et la culture touarègue\n\nLe Tassili compte plus de 15 000 peintures et gravures. La plus connue, la Vache qui pleure, se trouve près de Djanet. Le soir, le thé, la musique et les récits des guides Imouhagh font partie du voyage.\n\n## Dormir en bivouac\n\nUne nuit sous les étoiles reste le souvenir le plus fort. Le matériel est fourni et le campement monté par l'équipe.\n\n## Comment organiser votre séjour\n\nComptez au moins quatre jours sur place. Pour un programme adapté à vos dates, [envoyez-nous votre demande de réservation](reservation.html) ou parcourez [tous nos circuits](circuits.html)."
+   },
+   "en": {
+    "t": "Things to do in Djanet: 8 experiences in the Algerian Sahara",
+    "d": "Red dunes of the Tadrart, the Essendilène guelta, Tassili rock art: 8 experiences not to miss in Djanet, and how to plan them.",
+    "body": "Djanet is the gateway to the [Tassili n'Ajjer, a UNESCO World Heritage site](https://whc.unesco.org/en/list/179/). Here is what stays with our travellers.\n\n## Landscapes you should not miss\n\nThe red dunes of Tin Merzouga, in the heart of the [Red Tadrart](circuit-tadrart-rouge.html), change colour every hour. The Essendilène canyon hides a guelta between two walls, and the Ihrir valley a permanent lake in the middle of the desert, both part of the [Ihrir and Essendilène](circuit-ihrir-essendilene.html) tour.\n\n## Rock art and Tuareg culture\n\nThe Tassili holds more than 15,000 paintings and engravings. The best known, the Crying Cow, is near Djanet. In the evening, tea, music and the stories of the Imouhagh guides are part of the journey.\n\n## Sleeping at a desert camp\n\nA night under the stars is the strongest memory. Equipment is provided and the camp is set up by the team.\n\n## How to plan your stay\n\nAllow at least four days on site. For an itinerary that fits your dates, [send us your booking request](reservation.html) or browse [all our tours](circuits.html)."
+   }
+  }
+ },
+ {
+  "type": "post",
+  "slug": "quand-partir-a-djanet",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "date": "2026-11-03",
+   "img": "assets/img/sky.jpg",
+   "fr": {
+    "t": "Quand partir à Djanet ? La meilleure saison pour le Sahara",
+    "d": "D'octobre à avril, le climat de Djanet est idéal. Mois par mois, ce qu'il faut savoir avant de réserver votre voyage dans le désert algérien.",
+    "body": "La saison des voyages à Djanet va d'octobre à avril. Le reste de l'année, la chaleur rend les journées dans le désert trop éprouvantes.\n\n## Octobre et novembre : le début de saison\n\nLes journées sont chaudes et les nuits douces. C'est une bonne période pour la [Tadrart Rouge](circuit-tadrart-rouge.html) et pour les familles.\n\n## Décembre à février : le cœur de l'hiver\n\nLes journées sont ensoleillées et les nuits froides : prévoyez une veste chaude et un bon duvet. Les fêtes de fin d'année sont très demandées, il faut réserver tôt.\n\n## Mars et avril : la fin de saison\n\nLes températures remontent et la lumière est superbe. C'est la dernière fenêtre confortable pour le [trek du Tassili](circuit-trek-tassili.html).\n\n## Réserver au bon moment\n\nLes vols intérieurs vers Djanet se remplissent vite en haute saison. Dès que vos dates sont fixées, [faites votre demande de réservation](reservation.html) : nous vous confirmons les disponibilités sous 24 heures."
+   },
+   "en": {
+    "t": "When to go to Djanet: the best season for the Sahara",
+    "d": "From October to April, Djanet's climate is ideal. What to know, season by season, before booking your trip to the Algerian desert.",
+    "body": "The travel season in Djanet runs from October to April. The rest of the year, the heat makes days in the desert too demanding.\n\n## October and November: early season\n\nDays are warm and nights are mild. A good time for the [Red Tadrart](circuit-tadrart-rouge.html) and for families.\n\n## December to February: deep winter\n\nDays are sunny and nights are cold: bring a warm jacket and a good sleeping bag. The end-of-year holidays are in high demand, so book early.\n\n## March and April: late season\n\nTemperatures rise again and the light is superb. It is the last comfortable window for the [Tassili trek](circuit-trek-tassili.html).\n\n## Booking at the right time\n\nDomestic flights to Djanet fill up fast in high season. Once your dates are set, [send your booking request](reservation.html): we confirm availability within 24 hours."
+   }
+  }
+ },
+ {
+  "type": "post",
+  "slug": "tadrart-rouge-guide",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "date": "2026-10-27",
+   "img": "assets/img/tadrart-rocks.jpg",
+   "fr": {
+    "t": "Tadrart Rouge : le guide pour préparer votre expédition",
+    "d": "Où se trouve la Tadrart Rouge, que voir, combien de jours prévoir et comment s'y rendre depuis Djanet : le guide complet.",
+    "body": "La Tadrart Rouge s'étend au sud-est de Djanet, près de la frontière libyenne. C'est le paysage le plus photographié du Sahara algérien.\n\n## Ce que l'on y voit\n\nDes dunes rouges posées contre des falaises noires, des arches naturelles et, dans l'oued In Djerane, des gravures rupestres parmi les plus anciennes du [Tassili n'Ajjer](https://whc.unesco.org/fr/list/179/).\n\n## Combien de jours prévoir\n\nIl faut cinq à six jours au départ de Djanet pour atteindre Tin Merzouga et prendre le temps des bivouacs. Notre circuit [Tadrart Rouge](circuit-tadrart-rouge.html) dure six jours et cinq nuits.\n\n## Comment s'y rendre\n\nLa Tadrart se rejoint en 4x4, avec un guide local et une agence agréée. Les pistes ne sont pas balisées, on ne s'y aventure pas seul.\n\n## Préparer son sac\n\nVêtements légers, veste chaude, chèche, lampe frontale et crème solaire suffisent. Le reste est fourni. Prêt à partir ? [Réservez votre expédition](reservation.html)."
+   },
+   "en": {
+    "t": "Red Tadrart: a guide to planning your expedition",
+    "d": "Where the Red Tadrart is, what to see, how many days to allow and how to get there from Djanet: the full guide.",
+    "body": "The Red Tadrart lies south-east of Djanet, near the Libyan border. It is the most photographed landscape in the Algerian Sahara.\n\n## What you see there\n\nRed dunes resting against black cliffs, natural arches and, in Oued In Djerane, some of the oldest rock engravings of the [Tassili n'Ajjer](https://whc.unesco.org/en/list/179/).\n\n## How many days to allow\n\nIt takes five to six days from Djanet to reach Tin Merzouga and enjoy the camps. Our [Red Tadrart](circuit-tadrart-rouge.html) tour lasts six days and five nights.\n\n## How to get there\n\nThe Tadrart is reached by 4x4, with a local guide and a licensed agency. Tracks are unmarked, and nobody goes there alone.\n\n## Packing your bag\n\nLight clothes, a warm jacket, a scarf, a head torch and sunscreen are enough. The rest is provided. Ready to go? [Book your expedition](reservation.html)."
+   }
+  }
+ },
+ {
+  "type": "post",
+  "slug": "preparer-voyage-sahara-algerien",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "date": "2026-10-20",
+   "img": "assets/img/jeeps.jpg",
+   "fr": {
+    "t": "Préparer son voyage dans le Sahara algérien : visa, vols et bagages",
+    "d": "Visa, vol intérieur vers Djanet, santé, bagages : la liste de tout ce qu'il faut préparer avant un voyage dans le Sahara algérien.",
+    "body": "Un voyage à Djanet se prépare quelques semaines à l'avance. Voici les étapes, dans l'ordre.\n\n## Le visa\n\nLa plupart des voyageurs étrangers ont besoin d'un visa pour l'Algérie. Les conditions varient selon la nationalité : vérifiez-les auprès du consulat. Nous vous fournissons les documents de l'agence et vous guidons dans la démarche.\n\n## Les vols\n\nOn rejoint Djanet par vol intérieur depuis Alger. Indiquez-nous votre ville de départ dans la [demande de réservation](reservation.html), nous vous conseillons sur les correspondances.\n\n## Les bagages\n\nUn sac souple est plus pratique qu'une valise dans les 4x4. Prévoyez des vêtements légers, une veste chaude pour la nuit, des chaussures de marche et une lampe frontale.\n\n## Sur place\n\nLe réseau téléphonique s'arrête à la sortie de Djanet. Transferts, repas, eau et matériel de bivouac sont compris dans [tous nos circuits](circuits.html)."
+   },
+   "en": {
+    "t": "Planning a trip to the Algerian Sahara: visa, flights and packing",
+    "d": "Visa, domestic flight to Djanet, health, packing: everything to prepare before a trip to the Algerian Sahara.",
+    "body": "A trip to Djanet takes a few weeks of preparation. Here are the steps, in order.\n\n## The visa\n\nMost foreign travellers need a visa for Algeria. Conditions vary by nationality: check them with the consulate. We provide the agency documents and guide you through the process.\n\n## Flights\n\nDjanet is reached on a domestic flight from Algiers. Tell us your departure city in the [booking request](reservation.html) and we will advise you on connections.\n\n## Packing\n\nA soft bag is more practical than a suitcase in the 4x4s. Bring light clothes, a warm jacket for the night, walking shoes and a head torch.\n\n## On site\n\nPhone coverage stops on the way out of Djanet. Transfers, meals, water and camping gear are included in [all our tours](circuits.html)."
+   }
+  }
+ },
+ {
+  "type": "post",
+  "slug": "sebiba-djanet-festival",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "date": "2026-10-13",
+   "img": "assets/img/sebiba-2.jpg",
+   "fr": {
+    "t": "La Sebiba de Djanet : un rituel touareg classé par l'UNESCO",
+    "d": "Chaque année pour l'Achoura, Djanet célèbre la Sebiba, inscrite au patrimoine immatériel de l'UNESCO en 2014. Origines, déroulement et conseils pour y assister.",
+    "body": "La Sebiba est le grand rendez-vous des habitants de Djanet. [L'UNESCO l'a inscrite en 2014](https://ich.unesco.org/en/RL/ritual-and-ceremonies-of-sebeiba-in-the-oasis-of-djanet-algeria-00665) sur la liste du patrimoine culturel immatériel de l'humanité.\n\n## Dix jours de préparation\n\nLe rituel se tient pendant les dix premiers jours du premier mois du calendrier musulman. Pendant neuf jours, danseurs et chanteuses de deux communautés de Djanet se mesurent lors des Timoulaouine pour gagner le droit de représenter leur quartier.\n\n## Le jour de la Sebiba\n\nLe dixième jour, les danseurs en tenue de guerrier et les chanteuses se retrouvent au lieu-dit Loghya. Les hommes paradent, sabre à la main, pendant que les femmes chantent au rythme des tambourins.\n\n## Y assister avec respect\n\nLa Sebiba est une fête des habitants avant d'être un spectacle. Nous y allons en petit groupe, invités par les familles que nous connaissons.\n\n## Réserver pour la Sebiba\n\nLes dates changent chaque année avec le calendrier lunaire. Notre circuit [Festival de la Sebiba](circuit-festival-sebiba.html) s'y adapte : [écrivez-nous pour connaître les prochaines dates](reservation.html)."
+   },
+   "en": {
+    "t": "The Sebiba of Djanet: a Tuareg ritual listed by UNESCO",
+    "d": "Every year for Ashura, Djanet celebrates the Sebiba, listed as UNESCO intangible heritage in 2014. Origins, how it unfolds and tips for attending.",
+    "body": "The Sebiba is the great gathering of Djanet's people. [UNESCO inscribed it in 2014](https://ich.unesco.org/en/RL/ritual-and-ceremonies-of-sebeiba-in-the-oasis-of-djanet-algeria-00665) on the list of the intangible cultural heritage of humanity.\n\n## Ten days of preparation\n\nThe ritual takes place during the first ten days of the first month of the Islamic calendar. For nine days, dancers and singers from two communities of Djanet compete in the Timoulawine for the right to represent their neighbourhood.\n\n## Sebiba day\n\nOn the tenth day, dancers dressed as warriors and female singers gather at a place called Loghya. The men parade, sword in hand, while the women sing to the rhythm of tambourines.\n\n## Attending with respect\n\nThe Sebiba is a celebration for local people before it is a show. We go in a small group, invited by families we know.\n\n## Booking for the Sebiba\n\nDates change every year with the lunar calendar. Our [Sebiba Festival](circuit-festival-sebiba.html) tour follows them: [write to us for the next dates](reservation.html)."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "home": true,
+   "fr": {
+    "g": "Avant le départ",
+    "q": "Faut-il un visa pour venir à Djanet ?",
+    "a": "Oui. En voyageant avec une agence algérienne agréée, vous pouvez l'obtenir à l'arrivée. Le dossier se prépare avant votre départ. Les détails sont sur la page [Infos pratiques](infos-pratiques.html#visa)."
+   },
+   "en": {
+    "g": "Before you leave",
+    "q": "Do I need a visa to come to Djanet?",
+    "a": "Yes. When travelling with a licensed Algerian agency, you can get it on arrival. The file is prepared before you leave. Details are on the [Travel info](infos-pratiques.html#visa) page."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Avant le départ",
+    "q": "Comment arrive-t-on à Djanet ?",
+    "a": "En avion, par un vol intérieur depuis Alger. L'équipe vous accueille à l'aéroport de Djanet, à toute heure."
+   },
+   "en": {
+    "g": "Before you leave",
+    "q": "How do I get to Djanet?",
+    "a": "By plane, on a domestic flight from Algiers. The team meets you at Djanet airport, at any hour."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "home": true,
+   "fr": {
+    "g": "Avant le départ",
+    "q": "Quelle est la meilleure période ?",
+    "a": "D'octobre à avril. De décembre à février, les journées sont agréables et les nuits froides. Nous détaillons chaque période dans [Quand partir](infos-pratiques.html#saison)."
+   },
+   "en": {
+    "g": "Before you leave",
+    "q": "When is the best time?",
+    "a": "From October to April. From December to February, days are pleasant and nights are cold. Each period is described in [When to go](infos-pratiques.html#saison)."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Avant le départ",
+    "q": "Combien de temps à l'avance faut-il réserver ?",
+    "a": "Le plus tôt possible en haute saison, pour les vols comme pour le dossier de visa. [Envoyez votre demande](reservation.html) et Mina vous indique les délais pour vos dates."
+   },
+   "en": {
+    "g": "Before you leave",
+    "q": "How far ahead should I book?",
+    "a": "As early as possible in high season, for flights and for the visa file. [Send your request](reservation.html) and Mina tells you the timing for your dates."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Pendant le voyage",
+    "q": "Faut-il être sportif ?",
+    "a": "Non. Les circuits en 4x4 demandent seulement de courtes marches. Le trek sur le plateau du Tassili s'adresse à des marcheurs en forme. Le niveau est indiqué sur chaque [circuit](circuits.html)."
+   },
+   "en": {
+    "g": "During the trip",
+    "q": "Do I need to be fit?",
+    "a": "No. 4x4 tours only involve short walks. The trek on the Tassili plateau is for fit walkers. The level is shown on each [tour](circuits.html)."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 5,
+  "published": 1,
+  "data": {
+   "home": true,
+   "fr": {
+    "g": "Pendant le voyage",
+    "q": "Où dort-on ?",
+    "a": "En bivouac, sous tente ou à la belle étoile, avec matelas et couvertures fournis. Une nuit en maison d'hôtes à Djanet peut être ajoutée."
+   },
+   "en": {
+    "g": "During the trip",
+    "q": "Where do we sleep?",
+    "a": "In a wild camp, in a tent or under the stars, with mattresses and blankets provided. A guesthouse night in Djanet can be added."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 6,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Pendant le voyage",
+    "q": "Que mange-t-on ?",
+    "a": "Une cuisine du désert préparée sur place : salades, plats mijotés, pain cuit dans le sable, thé. Signalez-nous tout régime particulier à la réservation."
+   },
+   "en": {
+    "g": "During the trip",
+    "q": "What do we eat?",
+    "a": "Desert cooking prepared on the spot: salads, stews, bread baked in the sand, tea. Tell us about any dietary needs when booking."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 7,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Pendant le voyage",
+    "q": "Y a-t-il du réseau et de l'électricité ?",
+    "a": "À Djanet, oui. En bivouac, non : prévoyez une batterie externe. Les véhicules permettent de recharger un téléphone."
+   },
+   "en": {
+    "g": "During the trip",
+    "q": "Is there network and electricity?",
+    "a": "In Djanet, yes. In camp, no: bring a power bank. Phones can be charged in the vehicles."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 8,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Votre groupe",
+    "q": "Peut-on venir avec des enfants ?",
+    "a": "Oui. Le circuit [Djanet en famille](circuit-djanet-en-famille.html) est pensé pour eux, avec des étapes courtes et des canyons faciles."
+   },
+   "en": {
+    "g": "Your group",
+    "q": "Can we come with children?",
+    "a": "Yes. The [Djanet with family](circuit-djanet-en-famille.html) tour is designed for them, with short stages and easy canyons."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 9,
+  "published": 1,
+  "data": {
+   "home": true,
+   "fr": {
+    "g": "Votre groupe",
+    "q": "Les voyages sont-ils privés ?",
+    "a": "Oui. Chaque départ est organisé pour vous, que vous veniez seul, en couple, en famille ou entre amis. Les dates et le rythme se décident ensemble."
+   },
+   "en": {
+    "g": "Your group",
+    "q": "Are the trips private?",
+    "a": "Yes. Each departure is organised for you, whether you come alone, as a couple, with family or friends. Dates and pace are decided together."
+   }
+  }
+ },
+ {
+  "type": "faq",
+  "slug": "",
+  "position": 10,
+  "published": 1,
+  "data": {
+   "home": false,
+   "fr": {
+    "g": "Votre groupe",
+    "q": "Comment se passe la réservation ?",
+    "a": "Vous remplissez la [demande de réservation](reservation.html). Mina vous envoie un programme et un devis, puis vous confirme les modalités de paiement."
+   },
+   "en": {
+    "g": "Your group",
+    "q": "How does booking work?",
+    "a": "You fill in the [booking request](reservation.html). Mina sends you a programme and a quote, then confirms the payment terms."
+   }
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "img": "assets/img/hero-arch.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tuareg-woman.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tents.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 3,
+  "published": 1,
+  "data": {
+   "img": "assets/img/essendilene-2.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 4,
+  "published": 1,
+  "data": {
+   "img": "assets/img/camel.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 5,
+  "published": 1,
+  "data": {
+   "img": "assets/img/fire-man.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 6,
+  "published": 1,
+  "data": {
+   "img": "assets/img/rainbow.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 7,
+  "published": 1,
+  "data": {
+   "img": "assets/img/woman-purple.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 8,
+  "published": 1,
+  "data": {
+   "img": "assets/img/breakfast.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 9,
+  "published": 1,
+  "data": {
+   "img": "assets/img/canyon-tall.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 10,
+  "published": 1,
+  "data": {
+   "img": "assets/img/blue-turban.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 11,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tassili-spires.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 12,
+  "published": 1,
+  "data": {
+   "img": "assets/img/jeeps.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 13,
+  "published": 1,
+  "data": {
+   "img": "assets/img/green-dune.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 14,
+  "published": 1,
+  "data": {
+   "img": "assets/img/ihrir-guelta.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 15,
+  "published": 1,
+  "data": {
+   "img": "assets/img/rock-art.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 16,
+  "published": 1,
+  "data": {
+   "img": "assets/img/group-dune.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 17,
+  "published": 1,
+  "data": {
+   "img": "assets/img/sky.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 18,
+  "published": 1,
+  "data": {
+   "img": "assets/img/kid-water.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 19,
+  "published": 1,
+  "data": {
+   "img": "assets/img/huts.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 20,
+  "published": 1,
+  "data": {
+   "img": "assets/img/arch-group.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 21,
+  "published": 1,
+  "data": {
+   "img": "assets/img/palms.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 22,
+  "published": 1,
+  "data": {
+   "img": "assets/img/fire.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 23,
+  "published": 1,
+  "data": {
+   "img": "assets/img/peaks.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 24,
+  "published": 1,
+  "data": {
+   "img": "assets/img/hero-veil.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 25,
+  "published": 1,
+  "data": {
+   "img": "assets/img/cave-arch.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 26,
+  "published": 1,
+  "data": {
+   "img": "assets/img/jewels.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 27,
+  "published": 1,
+  "data": {
+   "img": "assets/img/ihrir-oasis.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 28,
+  "published": 1,
+  "data": {
+   "img": "assets/img/essendilene-1.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 29,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tent-sunrise.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 30,
+  "published": 1,
+  "data": {
+   "img": "assets/img/guitar.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 31,
+  "published": 1,
+  "data": {
+   "img": "assets/img/giraffe.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 32,
+  "published": 1,
+  "data": {
+   "img": "assets/img/tadrart-rocks.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 33,
+  "published": 1,
+  "data": {
+   "img": "assets/img/hero-dunes.jpg",
+   "cat": "land"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 34,
+  "published": 1,
+  "data": {
+   "img": "assets/img/dunes-car.jpg",
+   "cat": "camp"
+  }
+ },
+ {
+  "type": "photo",
+  "slug": "",
+  "position": 35,
+  "published": 1,
+  "data": {
+   "img": "assets/img/women-dunes.jpg",
+   "cat": "people"
+  }
+ },
+ {
+  "type": "review",
+  "slug": "",
+  "position": 0,
+  "published": 1,
+  "data": {
+   "name": "Avis d'exemple",
+   "origin": "France",
+   "circuit": "tadrart-rouge",
+   "rating": 5,
+   "date": "2026-11-01",
+   "lang": "fr",
+   "text": "Texte d'exemple : remplacez-le par le vrai avis d'un voyageur depuis l'administration, rubrique Avis.",
+   "sample": true
+  }
+ },
+ {
+  "type": "review",
+  "slug": "",
+  "position": 1,
+  "published": 1,
+  "data": {
+   "name": "Sample review",
+   "origin": "United Kingdom",
+   "circuit": "trek-tassili",
+   "rating": 5,
+   "date": "2026-11-01",
+   "lang": "en",
+   "text": "Sample text: replace it with a real traveller's review from the admin, in the Reviews section.",
+   "sample": true
+  }
+ },
+ {
+  "type": "review",
+  "slug": "",
+  "position": 2,
+  "published": 1,
+  "data": {
+   "name": "Avis d'exemple",
+   "origin": "Algérie",
+   "circuit": "djanet-en-famille",
+   "rating": 5,
+   "date": "2026-11-01",
+   "lang": "fr",
+   "text": "Texte d'exemple : les avis envoyés depuis le site arrivent dans l'administration et ne sont publiés qu'après votre validation.",
+   "sample": true
+  }
+ }
+]
