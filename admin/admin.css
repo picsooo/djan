@@ -167,6 +167,8 @@ input:disabled{background:var(--soft);color:var(--mute)}
 .imgw img{width:170px;height:112px;object-fit:cover;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
 .imgw.empty img{background:repeating-linear-gradient(45deg,var(--soft),var(--soft) 8px,#F1E8DA 8px,#F1E8DA 16px)}
 .imgw.empty [data-clear]{display:none}
+.imgw img:not([src]){content:url("data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7")}
+.imgw-logo img{object-fit:contain;padding:10px;background:#fff}
 .imgw-a{display:flex;gap:6px}
 .imgs{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .imgs-i{position:relative}

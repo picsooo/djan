@@ -201,7 +201,7 @@ if ($r === 'dashboard') {
     if (!$rows) $h .= '<p class="empty">Aucune demande pour l’instant. Les demandes envoyées depuis le formulaire de réservation et la page Contact apparaîtront ici.</p>';
     else {
         $h .= '<ul class="mini">';
-        foreach ($rows as $b) $h .= '<li><a href="' . e(url('booking', ['id' => $b['id']])) . '"><b>' . e($b['name'] ?: 'Sans nom') . '</b><span>' . e($b['kind'] === 'contact' ? 'Message' : ($b['trip'] ?: 'Réservation')) . '</span><i class="st st-' . e($b['status']) . '">' . e(STATUSES[$b['status']] ?? $b['status']) . '</i><time>' . e(date('d/m H:i', strtotime($b['created']))) . '</time></a></li>';
+        foreach ($rows as $b) $h .= '<li><a href="' . e(url('booking', ['id' => $b['id']])) . '"><b>' . e($b['name'] ?: 'Sans nom') . '</b><span>' . e($b['kind'] === 'contact' ? 'Message' : ($b['trip'] ? (circuit_name($b['trip']) ?: $b['trip']) : 'Réservation')) . '</span><i class="st st-' . e($b['status']) . '">' . e(STATUSES[$b['status']] ?? $b['status']) . '</i><time>' . e(date('d/m H:i', strtotime($b['created']))) . '</time></a></li>';
         $h .= '</ul>';
     }
     $h .= '</section><section class="card"><header class="card-h"><h2>Raccourcis</h2></header><div class="quick">'

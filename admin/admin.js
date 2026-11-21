@@ -122,7 +122,7 @@
       span.firstChild.src = url; span.children[1].name = name; span.children[1].value = p;
       target.insertBefore(span, $(".imgs-add", target));
     } else {
-      $("img", target).src = url; $("input[type=hidden]", target).value = p; target.classList.remove("empty");
+      $("img", target).setAttribute("src", url); $("input[type=hidden]", target).value = p; target.classList.remove("empty");
       markDirty(target);
       closePicker();
       return;

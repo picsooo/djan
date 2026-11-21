@@ -205,8 +205,9 @@ function rep_item(string $name, string $i, $item, bool $en, int $depth): string
 
 function img_widget(string $name, string $val): string
 {
-    $src = $val !== '' ? e(asset($val)) : '';
-    return '<div class="imgw' . ($val === '' ? ' empty' : '') . '"><img src="' . $src . '" alt=""><input type="hidden" name="' . e($name) . '" value="' . e($val) . '">'
+    $src = $val !== '' ? ' src="' . e(asset($val)) . '"' : '';
+    $logo = preg_match('/(logo|favicon)/', $name) ? ' imgw-logo' : '';
+    return '<div class="imgw' . $logo . ($val === '' ? ' empty' : '') . '"><img' . $src . ' alt=""><input type="hidden" name="' . e($name) . '" value="' . e($val) . '">'
         . '<span class="imgw-a"><button type="button" class="btn-sm" data-pick>Choisir</button><button type="button" class="btn-sm btn-ghost" data-clear>Retirer</button></span></div>';
 }
 function imgs_item(string $name, string $val): string
