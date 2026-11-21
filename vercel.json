@@ -1,1 +1,1 @@
-{"headers":[{"source":"/(.*)","headers":[{"key":"X-Robots-Tag","value":"noindex, nofollow, noarchive"}]}]}
+{"redirects":[{"source":"/","destination":"/anime/","permanent":false}],"headers":[{"source":"/(.*)","headers":[{"key":"X-Robots-Tag","value":"noindex, nofollow, noarchive"}]}]}
