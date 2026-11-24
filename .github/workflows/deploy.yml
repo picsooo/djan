@@ -1,0 +1,33 @@
+name: Déployer sur l'hébergement cPanel
+
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Envoi des fichiers par FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          server-dir: public_html/
+          # data/ (base de données) et uploads/ (photos envoyées par la cliente) ne sont jamais touchés
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            data/**
+            uploads/**
+            app/dev-router.php
+            LISEZ-MOI.txt

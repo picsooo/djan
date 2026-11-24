@@ -1,0 +1,44 @@
+TOURING WITH MINA — SITE + ADMINISTRATION
+Réalisé par Webminds
+
+CE QU'IL FAUT SUR LE SERVEUR
+- PHP 8.1 ou plus récent, avec les extensions pdo_sqlite, gd et mbstring
+  (cPanel > Select PHP Version)
+- Apache ou LiteSpeed (les fichiers .htaccess doivent être pris en compte)
+- Aucune base MySQL à créer : le site utilise SQLite (un fichier dans data/)
+
+DÉPLOIEMENT AUTOMATIQUE (GitHub -> cPanel)
+Chaque push sur la branche "production" du dépôt envoie les fichiers dans
+public_html par FTP (GitHub Actions, fichier .github/workflows/deploy.yml).
+Les dossiers data/ (base) et uploads/ (photos de l'admin) ne sont jamais
+envoyés ni écrasés. Secrets à créer une fois dans GitHub
+(Settings > Secrets and variables > Actions) :
+  FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+
+INSTALLATION (une seule fois, après le premier déploiement)
+1. Activer le certificat SSL (cPanel > SSL/TLS Status > AutoSSL).
+2. Ouvrir https://votre-domaine/install.php, créer le compte administrateur.
+   Les textes, circuits, photos et articles sont importés.
+3. Se connecter sur https://votre-domaine/admin/
+4. Dans Utilisateurs : créer un deuxième compte administrateur (Webminds et
+   la cliente), pour pouvoir réinitialiser un mot de passe oublié.
+5. Dans Réglages : vérifier l'adresse du site, l'e-mail qui reçoit les alertes,
+   ajouter le logo.
+install.php se bloque tout seul dès qu'un compte existe.
+
+APRÈS L'INSTALLATION
+Les textes et photos se modifient dans l'admin : ils sont dans la base, un
+déploiement ne les change plus. Le dépôt ne sert qu'au code et au design.
+
+AU LANCEMENT OFFICIEL (Réglages)
+- Décocher « Afficher le badge Contenu illustratif »
+- Cocher « Le site est visible sur Google »
+- Supprimer ou remplacer les 3 avis d'exemple (rubrique Avis)
+- Envoyer le plan du site à Google Search Console : https://votre-domaine/sitemap.xml
+
+SAUVEGARDE
+Télécharger régulièrement les dossiers data/ (base) et uploads/ (images),
+ou utiliser la sauvegarde complète de cPanel.
+
+MISE À JOUR DU CODE
+Remplacer tous les fichiers SAUF les dossiers data/ et uploads/.
