@@ -6,7 +6,7 @@ define('ROOT', dirname(__DIR__));
 define('DATA', ROOT . '/data');
 define('UPLOADS', ROOT . '/uploads');
 const LANGS = ['fr', 'en'];
-const CMS_VERSION = '1.1';
+const CMS_VERSION = '1.2';
 
 mb_internal_encoding('UTF-8');
 date_default_timezone_set('Africa/Algiers');
