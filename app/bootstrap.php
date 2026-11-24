@@ -60,7 +60,9 @@ function db(): PDO
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
-    $pdo->exec('PRAGMA journal_mode=WAL; PRAGMA foreign_keys=ON; PRAGMA busy_timeout=4000;');
+    // Classic journal (not WAL): on shared hosting, WAL can leave the public pages reading an older copy of the data.
+    $pdo->exec('PRAGMA busy_timeout=6000; PRAGMA foreign_keys=ON;');
+    try { $pdo->query('PRAGMA journal_mode=DELETE')->fetchAll(); } catch (Throwable $t) { /* keep the current mode if the base is busy */ }
     return $pdo;
 }
 
