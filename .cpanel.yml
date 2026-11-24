@@ -1,0 +1,7 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=$HOME/public_html
+    - /bin/mkdir -p $DEPLOYPATH
+    # data/ (base) et uploads/ (photos de l'admin) ne sont jamais copiés ni écrasés
+    - /bin/tar --exclude=./.git --exclude=./.github --exclude=./.cpanel.yml --exclude=./.gitignore --exclude=./data --exclude=./uploads --exclude=./app/dev-router.php --exclude=./LISEZ-MOI.txt -cf - . | /bin/tar -xf - -C $DEPLOYPATH

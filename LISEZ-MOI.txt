@@ -7,13 +7,12 @@ CE QU'IL FAUT SUR LE SERVEUR
 - Apache ou LiteSpeed (les fichiers .htaccess doivent être pris en compte)
 - Aucune base MySQL à créer : le site utilise SQLite (un fichier dans data/)
 
-DÉPLOIEMENT AUTOMATIQUE (GitHub -> cPanel)
-Chaque push sur la branche "production" du dépôt envoie les fichiers dans
-public_html par FTP (GitHub Actions, fichier .github/workflows/deploy.yml).
+DÉPLOIEMENT (GitHub -> cPanel, Git Version Control)
+Le dépôt est cloné dans cPanel (hors de public_html), branche "production".
+Le fichier .cpanel.yml copie le site dans public_html à chaque déploiement.
 Les dossiers data/ (base) et uploads/ (photos de l'admin) ne sont jamais
-envoyés ni écrasés. Secrets à créer une fois dans GitHub
-(Settings > Secrets and variables > Actions) :
-  FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+copiés ni écrasés.
+Une tâche cron peut faire "Update from Remote" + "Deploy" toute seule.
 
 INSTALLATION (une seule fois, après le premier déploiement)
 1. Activer le certificat SSL (cPanel > SSL/TLS Status > AutoSSL).

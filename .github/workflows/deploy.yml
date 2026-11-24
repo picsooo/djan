@@ -1,8 +1,7 @@
-name: Déployer sur l'hébergement cPanel
+name: Déploiement FTP de secours
 
+# Secours uniquement : le déploiement normal passe par cPanel > Git Version Control (.cpanel.yml)
 on:
-  push:
-    branches: [production]
   workflow_dispatch:
 
 concurrency:
