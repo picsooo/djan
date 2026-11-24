@@ -2,6 +2,7 @@
 /* Touring with Mina — administration. */
 define('IN_ADMIN', true);
 require dirname(__DIR__) . '/app/bootstrap.php';
+header('Cache-Control: no-cache, no-store, must-revalidate'); header('Pragma: no-cache'); header('X-LiteSpeed-Cache-Control: no-cache');
 require APP . '/admin_lib.php';
 
 if (!installed()) { header('Location: ../install.php'); exit; }
@@ -307,6 +308,7 @@ if ($r === 'edit' && isset($T[$_GET['type'] ?? ''])) {
         $new = merge_posted($doc['data'] ?? $t['blank'], is_array($posted) ? $posted : []);
         $slug = '';
         if ($t['slug']) $slug = unique_slug($type, trim((string)($_POST['slug'] ?? '')) ?: (string)($new['fr']['t'] ?? $type), $id);
+        if ($doc && $t['slug'] && $doc['slug'] !== '' && $doc['slug'] !== $slug) $new['_old'] = array_values(array_unique(array_merge((array)($doc['data']['_old'] ?? []), [$doc['slug']])));
         $published = isset($_POST['published']) ? 1 : 0;
         $nid = doc_save($id ?: null, $type, $slug, $new, $published);
         flash('Enregistré.' . ($published ? '' : ' (non publié : invisible sur le site)'));

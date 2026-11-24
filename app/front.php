@@ -685,6 +685,11 @@ function render_route(string $lang, string $p): string
     }
     if (str_starts_with($p, 'circuit-') && ($c = doc_by_slug('circuit', substr($p, 8)))) return page_trip($c);
     if (str_starts_with($p, 'blog-') && ($b = doc_by_slug('post', substr($p, 5)))) return page_post($b);
+    // An address changed in the admin: the old one redirects to the new one.
+    foreach ([['circuit-', 'circuit'], ['blog-', 'post']] as [$pre, $type]) if (str_starts_with($p, $pre)) {
+        $old = substr($p, strlen($pre));
+        foreach (docs($type) as $d) if (in_array($old, (array)($d['data']['_old'] ?? []), true)) { header('Location: ' . $pre . $d['slug'] . '.html', true, 301); exit; }
+    }
     return page_404();
 }
 

@@ -140,7 +140,7 @@ function fields(array $data, string $name, bool $en = false, int $depth = 0): st
     foreach ($data as $key => $val) {
         $key = (string)$key;
         if (in_array($key, LANGS, true) && $depth === 0) continue;
-        if (in_array($key, ['sample_note', 'source'], true)) continue;
+        if (in_array($key, ['sample_note', 'source', '_old'], true)) continue;
         $o .= field($key, $val, $name . '[' . $key . ']', $en, $depth);
     }
     return $o;
