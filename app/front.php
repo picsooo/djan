@@ -164,7 +164,8 @@ function tcard(array $c): string
 function pcard(array $p): string
 {
     $t = T($p);
-    return '<a class="pcard rv" href="blog-' . e($p['slug']) . '.html"><figure><img src="' . img($p['data']['img'] ?? '') . '" alt="" loading="lazy"></figure><span class="meta">' . fdate($p['data']['date'] ?? '', L()) . '</span><h3>' . e($t['t'] ?? '') . '</h3><span class="more">' . eu('read') . '</span></a>';
+    $cat = trim((string)($t['category'] ?? ''));
+    return '<a class="pcard rv" href="blog-' . e($p['slug']) . '.html"><figure><img src="' . img($p['data']['img'] ?? '') . '" alt="" loading="lazy"></figure><span class="meta">' . ($cat !== '' ? '<b class="pcat">' . e($cat) . '</b> ' : '') . fdate($p['data']['date'] ?? '', L()) . '</span><h3>' . e($t['t'] ?? '') . '</h3><span class="more">' . eu('read') . '</span></a>';
 }
 function cta(): string
 {
@@ -296,6 +297,32 @@ function page_culture(): string
     return shell('culture.html', $body, ['title' => $C['h'] ?? U('culture'), 'desc' => $C['lead'] ?? null, 'og' => $Cd['hero_img'] ?? null]);
 }
 
+/** A block added by the client from the admin (Blocs de l'accueil). */
+function custom_block(array $sec): string
+{
+    $d = $sec['data']; $t = T($sec); $k = (string)($d['kind'] ?? '');
+    $h = (string)($t['t'] ?? ''); $img = (string)($d['img'] ?? '');
+    $ps = '';
+    foreach (preg_split('/\R\s*\R/', trim((string)($t['p'] ?? ''))) as $para) if (trim($para) !== '') $ps .= '<p class="rv">' . nl2br(e(trim($para))) . '</p>';
+    $href = safe_url(trim((string)($t['url'] ?? '')));
+    $ext = preg_match('#^https?://#', $href) ? ' target="_blank" rel="noopener"' : '';
+    $btn = (trim((string)($t['btn'] ?? '')) !== '' && $href !== '') ? '<a class="%s rv" href="' . e($href) . '"' . $ext . '>' . e($t['btn']) . '</a>' : '';
+    $fig = $img !== '' ? '<figure class="ra-f rv-img"><img src="' . img($img) . '" alt="' . e($h) . '" loading="lazy"></figure>' : '';
+    $txt = '<div class="ra-t">' . ($h !== '' ? '<h2 class="rv">' . e($h) . '</h2>' : '') . $ps . sprintf($btn, 'btn') . '</div>';
+    switch ($k) {
+        case 'texte_photo': return '<section class="sec ra-intro cb">' . $txt . $fig . '</section>';
+        case 'photo_texte': return '<section class="sec ra-intro cb cb-rev">' . $fig . $txt . '</section>';
+        case 'texte': return '<section class="sec cb cb-text">' . $txt . '</section>';
+        case 'photos':
+            $g = '';
+            foreach (($d['imgs'] ?? []) as $p) if ($p) $g .= '<figure class="gi"><img src="' . img($p) . '" alt="" loading="lazy" data-zoom></figure>';
+            return $g === '' ? '' : '<section class="sec cb">' . sec_head($h, trim((string)($t['p'] ?? ''))) . '<div class="ra-mos cb-mos">' . $g . '</div></section>';
+        case 'bandeau':
+            return '<section class="cta cb-band"><div class="cta-bg" style="background-image:url(' . img($img) . ')" data-par="0.15"></div><div class="cta-in"><h2 class="rv">' . e($h) . '</h2>' . $ps . '<div class="btns rv">' . sprintf($btn, 'btn btn-light') . '</div></div></section>';
+    }
+    return '';
+}
+
 /* ---------- pages ---------- */
 function page_home(): string
 {
@@ -337,7 +364,8 @@ function page_home(): string
     foreach (($H['incl'] ?? []) as $i => $x) $inc .= '<div class="inc rv"><figure><img src="' . img($Hfr['incl'][$i]['img'] ?? ($x['img'] ?? '')) . '" alt="" loading="lazy"></figure><h3>' . e($x['t'] ?? '') . '</h3><p>' . e($x['p'] ?? '') . '</p></div>';
     $incl = '<section class="sec">' . sec_head($H['incl_h'] ?? '', $H['incl_p'] ?? '') . '<div class="incl">' . $inc . '</div></section>';
     $quote = '<section class="quote"><figure class="rv-img"><img src="' . img($Hd['quote_img'] ?? '') . '" alt="" loading="lazy"></figure><blockquote class="rv">' . e($H['quote'] ?? '') . '<cite>' . e($H['quote_by'] ?? '') . '</cite></blockquote></section>';
-    $revs = reviews_block(array_slice(docs('review'), 0, 6), $H['rev_h'] ?? U('reviews'), $H['rev_p'] ?? '', ['avis.html', U('reviews_all')]);
+    $latest = docs('review'); usort($latest, fn($a, $b) => strcmp((string)($b['data']['date'] ?? ''), (string)($a['data']['date'] ?? '')) ?: $b['id'] <=> $a['id']);
+    $revs = reviews_block(array_slice($latest, 0, 6), $H['rev_h'] ?? U('reviews'), $H['rev_p'] ?? '', ['avis.html', U('reviews_all')]);
     $strip = '';
     foreach (($Hd['strip'] ?? []) as $s) $strip .= '<img src="' . img($s) . '" alt="" loading="lazy">';
     $gal = $strip ? '<section class="sec sec-gal">' . sec_head($H['gal_h'] ?? '', '', ['galerie.html', $H['gal_link'] ?? '']) . '<a class="strip" href="galerie.html" aria-label="' . e($H['gal_link'] ?? '') . '"><div class="strip-t">' . $strip . $strip . '</div></a></section>' : '';
@@ -345,7 +373,12 @@ function page_home(): string
     $faqs = $home ? '<section class="sec fhome">' . sec_head($H['faq_h'] ?? '', $H['faq_p'] ?? '', ['faq.html', U('all_faq')]) . '<div class="fhome-l">' . faq_items($home) . '</div></section>' : '';
     $posts = array_slice(docs('post'), 0, 3);
     $blog = $posts ? '<section class="sec">' . sec_head($H['blog_h'] ?? '', '', ['blog.html', U('all_posts')]) . '<div class="pgrid">' . implode('', array_map('pcard', $posts)) . '</div></section>' : '';
-    $body = implode("\n", [$hero, film_section(), $intro, $facts, $trips, ra_teaser(), $dests, why_section(), day_section(), cu_teaser(), $incl, $quote, $revs, $gal, capsules(), $faqs, $blog, cta()]);
+    $parts = ['hero' => $hero, 'film' => film_section(), 'intro' => $intro, 'facts' => $facts, 'trips' => $trips, 'rockart' => ra_teaser(), 'dests' => $dests, 'why' => why_section(), 'day' => day_section(),
+        'culture' => cu_teaser(), 'incl' => $incl, 'quote' => $quote, 'reviews' => $revs, 'gallery' => $gal, 'clips' => capsules(), 'faq' => $faqs, 'blog' => $blog, 'cta' => cta()];
+    ensure_sections();
+    $out = [];
+    foreach (docs('section') as $sec) { $k = (string)($sec['data']['kind'] ?? ''); $out[] = $parts[$k] ?? custom_block($sec); }
+    $body = implode("\n", $out);
     return shell('index.html', $body, ['desc' => $H['sub'] ?? null, 'cls' => 'is-home']);
 }
 
@@ -515,7 +548,17 @@ function page_gallery(): string
 function page_blog(): string
 {
     $B = P('blog');
-    $body = phead($B['h'] ?? '', $B['p'] ?? '', null, illus()) . '<section class="sec"><div class="pgrid pgrid-all">' . implode('', array_map('pcard', docs('post'))) . '</div></section>' . cta();
+    $posts = docs('post'); $cats = [];
+    foreach ($posts as $p) { $c = trim((string)(T($p)['category'] ?? '')); if ($c !== '') $cats[slugify($c)] = $c; }
+    $cur = slugify((string)($_GET['cat'] ?? ''));
+    if ($cur !== '' && isset($cats[$cur])) $posts = array_values(array_filter($posts, fn($p) => slugify(trim((string)(T($p)['category'] ?? ''))) === $cur)); else $cur = '';
+    $chips = '';
+    if (count($cats) > 0) {
+        $chips = '<nav class="chips bcats" aria-label="' . eu('blog') . '"><a href="blog.html"' . ($cur === '' ? ' class="on"' : '') . '>' . (L() === 'fr' ? 'Tous' : 'All') . '</a>';
+        foreach ($cats as $k => $c) $chips .= '<a href="blog.html?cat=' . e($k) . '"' . ($cur === $k ? ' class="on"' : '') . '>' . e($c) . '</a>';
+        $chips .= '</nav>';
+    }
+    $body = phead($B['h'] ?? '', $B['p'] ?? '', null, illus()) . '<section class="sec">' . $chips . '<div class="pgrid pgrid-all">' . implode('', array_map('pcard', $posts)) . '</div></section>' . cta();
     return shell('blog.html', $body, ['title' => U('blog'), 'desc' => $B['p'] ?? null]);
 }
 
@@ -531,7 +574,7 @@ function page_post(array $p): string
         'image' => $dom . '/' . ltrim((string)($d['img'] ?? ''), '/'), 'author' => ['@type' => 'Person', 'name' => $d['author'] ?? 'Mina'], 'publisher' => ['@type' => 'Organization', 'name' => $S['site_name'] ?? ''],
         'mainEntityOfPage' => $dom . '/' . (L() === 'en' ? 'en/' : '') . 'blog-' . $p['slug'] . '.html'];
     $by = e($d['author'] ?? '') !== '' ? (L() === 'fr' ? 'Par ' : 'By ') . e($d['author']) : eu('by');
-    $body = '<article class="post"><header class="post-h"><a class="link back" href="blog.html">' . eu('blog') . '</a><h1 class="rv">' . e($t['t'] ?? '') . '</h1><p class="meta">' . $by . ', ' . fdate($d['date'] ?? '', L()) . ' ' . illus() . '</p></header>'
+    $body = '<article class="post"><header class="post-h"><a class="link back" href="blog.html">' . eu('blog') . '</a><h1 class="rv">' . e($t['t'] ?? '') . '</h1><p class="meta">' . (trim((string)($t['category'] ?? '')) !== '' ? '<a class="pcat" href="blog.html?cat=' . e(slugify((string)$t['category'])) . '">' . e($t['category']) . '</a> ' : '') . $by . ', ' . fdate($d['date'] ?? '', L()) . ' ' . illus() . '</p></header>'
         . '<figure class="post-cover rv-img"><img src="' . img($d['img'] ?? '') . '" alt="' . e($t['t'] ?? '') . '"></figure>'
         . '<div class="post-grid"><aside class="toc"><h4>' . eu('toc') . '</h4>' . $tocHtml . '<a class="btn" href="reservation.html">' . eu('plan') . '</a></aside><div class="prose">' . $html . '</div></div></article>'
         . ($others ? '<section class="sec">' . sec_head(U('all_posts'), '', ['blog.html', U('blog')]) . '<div class="pgrid">' . implode('', array_map('pcard', $others)) . '</div></section>' : '')

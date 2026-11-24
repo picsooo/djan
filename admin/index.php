@@ -94,7 +94,7 @@ function layout(string $title, string $body, string $active = '', string $action
         ['—', 'Demandes'],
         ['bookings', 'Réservations & messages', 'inbox', $c['bookings']],
         ['—', 'Site'],
-        ['pages', 'Textes des pages', 'text', ''], ['media', 'Médiathèque', 'media', ''],
+        ['list:section', 'Blocs de l’accueil', 'text', ''], ['pages', 'Textes des pages', 'text', ''], ['media', 'Médiathèque', 'media', ''],
     ];
     if (is_admin()) { $nav[] = ['settings', 'Réglages', 'gear', '']; $nav[] = ['users', 'Utilisateurs', 'users', '']; }
     $nav[] = ['account', 'Mon compte', 'user', ''];
@@ -117,7 +117,7 @@ function layout(string $title, string $body, string $active = '', string $action
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <meta name="csrf" content="$csrf"><title>{$title} · Administration</title>
-<link rel="icon" href="data:,"><link rel="stylesheet" href="$assets/admin.css?v=1"></head>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="$assets/admin.css?v=2"></head>
 <body class="adm">
 <aside class="side" id="side"><div class="brand">$brand<small>Administration</small></div><nav>$links</nav>
 <div class="side-f">Réalisé par <a href="https://webminds.dz" target="_blank" rel="noopener">Webminds</a></div></aside>
@@ -126,7 +126,7 @@ function layout(string $title, string $body, string $active = '', string $action
 <div class="content">$flash$body</div>
 </div>
 <div class="modal" id="picker" hidden><div class="modal-b"><header><h2>Médiathèque</h2><label class="btn">Envoyer des images<input type="file" accept="image/jpeg,image/png,image/webp" multiple hidden data-upload></label><button type="button" class="x" data-close>×</button></header><p class="hint up-msg" data-up-msg></p><div class="grid-m" data-grid></div></div></div>
-<script src="$assets/admin.js?v=1"></script>
+<script src="$assets/admin.js?v=2"></script>
 </body></html>
 HTML;
     exit;
@@ -163,7 +163,7 @@ if ($r === 'login') {
     $site = e($S['site_name'] ?? '');
     $assets = e(base_url() . '/admin');
     $msg = $err ? '<p class="flash err">' . e($err) . '</p>' : '';
-    echo '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Connexion · ' . $site . '</title><link rel="icon" href="data:,"><link rel="stylesheet" href="' . $assets . '/admin.css?v=1"></head>'
+    echo '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Connexion · ' . $site . '</title><link rel="icon" href="data:,"><link rel="stylesheet" href="' . $assets . '/admin.css?v=2"></head>'
         . '<body class="auth"><main class="auth-box">' . $brand . '<h1>' . $site . '</h1><p class="hint">Administration du site</p>' . $msg
         . '<form method="post" class="form">' . csrf_field() . '<label>E-mail<input type="email" name="email" required autocomplete="username" autofocus value="' . e($_POST['email'] ?? '') . '"></label>'
         . '<label>Mot de passe<input type="password" name="pass" required autocomplete="current-password"></label><button class="btn">Se connecter</button></form>'
@@ -215,6 +215,7 @@ if ($r === 'dashboard') {
 /* ---------- content lists ---------- */
 if ($r === 'list' && isset($T[$_GET['type'] ?? ''])) {
     $type = $_GET['type']; $t = $T[$type];
+    if ($type === 'section') ensure_sections();
     $all = docs($type, false);
     if ($type === 'review') usort($all, fn($a, $b) => $a['published'] <=> $b['published'] ?: $a['position'] <=> $b['position']);
     $csrf = csrf_field();
@@ -236,10 +237,11 @@ if ($r === 'list' && isset($T[$_GET['type'] ?? ''])) {
         $thumb = !empty($x['img']) ? '<img src="' . e(asset($x['img'])) . '" alt="" loading="lazy">' : '<span class="ph">' . icon($t['icon']) . '</span>';
         $meta = match ($type) {
             'circuit' => !empty($x['d']) ? $x['d'] . ' jours' . (!empty($x['price']) ? ' · ' . $x['price'] : '') : 'Sur mesure',
-            'post' => fdate((string)($x['date'] ?? ''), 'fr'),
+            'post' => fdate((string)($x['date'] ?? ''), 'fr') . (!empty($x['fr']['category']) ? ' · ' . $x['fr']['category'] : ''),
             'faq' => ($x['fr']['g'] ?? '') . (!empty($x['home']) ? ' · sur l’accueil' : ''),
             'review' => str_repeat('★', (int)($x['rating'] ?? 5)) . ' · ' . ($x['origin'] ?? '') . (!empty($x['circuit']) ? ' · ' . $x['circuit'] : '') . (!empty($x['sample']) ? ' · exemple' : ''),
             'destination' => $x['word'] ?? '',
+            'section' => isset(SECTION_BUILTIN[$x['kind'] ?? '']) ? 'Section du site' : 'Bloc ajouté · ' . (SECTION_CUSTOM[$x['kind'] ?? ''] ?? ''),
             default => '',
         };
         $title = doc_title($d);
@@ -317,6 +319,15 @@ if ($r === 'edit' && isset($T[$_GET['type'] ?? ''])) {
     $top .= '<label class="f-check pub"><input type="checkbox" name="published" value="1"' . ($published ? ' checked' : '') . '><span>Publié sur le site</span></label>';
     if ($doc && !empty($t['url']) && $doc['published']) $top .= '<a class="btn-sm btn-ghost" href="' . e(base_url() . '/' . sprintf($t['url'], $doc['slug'])) . '" target="_blank" rel="noopener">Voir sur le site</a>';
     $top .= '</section>';
+    if ($type === 'post') $top .= '<section class="card seo" data-seo><h2 class="card-t">Conseils pour Google</h2><p class="hint">La liste se met à jour pendant que vous écrivez (onglet Français).</p><ul class="seo-l">'
+        . '<li data-k="title">Titre de 30 à 60 caractères, avec le lieu ou le sujet (ex. « Tadrart Rouge ») <i></i></li>'
+        . '<li data-k="desc">Description courte de 120 à 160 caractères <i></i></li>'
+        . '<li data-k="words">Texte d’au moins 600 mots <i></i></li>'
+        . '<li data-k="h2">Au moins 2 intertitres (bouton « Intertitre ») <i></i></li>'
+        . '<li data-k="links">Au moins un lien vers un circuit ou la réservation <i></i></li>'
+        . '<li data-k="img">Une image à la une (champ « Photo »)</li>'
+        . '<li data-k="cat">Une catégorie</li>'
+        . '<li data-k="en">La version anglaise remplie (titre et texte)</li></ul></section>';
     $form = '<form method="post" class="edit" data-dirty>' . csrf_field() . editor_form($data, $top) . '<div class="savebar"><a class="btn btn-line" href="' . e(url('list', ['type' => $type])) . '">Retour à la liste</a><button class="btn">Enregistrer</button></div></form>';
     layout(($doc ? 'Modifier : ' . e(doc_title($doc)) : e($t['new'])), $form, 'list:' . $type);
 }
@@ -337,7 +348,7 @@ if ($r === 'page' && isset(page_list()[$_GET['slug'] ?? ''])) {
         go('page', ['slug' => $slug]);
     }
     $view = ['home' => '', 'day' => '', 'about' => 'presentation.html', 'trips' => 'circuits.html', 'destinations' => 'destinations.html', 'infos' => 'infos-pratiques.html', 'faq' => 'faq.html',
-        'contact' => 'contact.html', 'gallery' => 'galerie.html', 'blog' => 'blog.html', 'reviews' => 'avis.html', 'booking' => 'reservation.html', 'ui' => ''][$slug];
+        'contact' => 'contact.html', 'gallery' => 'galerie.html', 'blog' => 'blog.html', 'reviews' => 'avis.html', 'booking' => 'reservation.html', 'ui' => '', 'film' => '', 'why' => '', 'rockart' => 'art-rupestre.html', 'culture' => 'culture.html'][$slug] ?? '';
     $top = '<p class="lead">' . e(page_list()[$slug][1]) . '. <a href="' . e(base_url() . '/' . $view) . '" target="_blank" rel="noopener">Voir la page</a></p>';
     $form = '<form method="post" class="edit" data-dirty>' . csrf_field() . editor_form($doc['data'], $top) . '<div class="savebar"><a class="btn btn-line" href="' . e(url('pages')) . '">Toutes les pages</a><button class="btn">Enregistrer</button></div></form>';
     layout(e(page_list()[$slug][0]), $form, 'pages');

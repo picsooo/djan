@@ -6,7 +6,7 @@ define('ROOT', dirname(__DIR__));
 define('DATA', ROOT . '/data');
 define('UPLOADS', ROOT . '/uploads');
 const LANGS = ['fr', 'en'];
-const CMS_VERSION = '1.0';
+const CMS_VERSION = '1.1';
 
 mb_internal_encoding('UTF-8');
 date_default_timezone_set('Africa/Algiers');
@@ -146,6 +146,23 @@ function doc_save(?int $id, string $type, string $slug, array $data, ?int $publi
     db()->prepare('INSERT INTO docs(type, slug, position, published, data, created, updated) VALUES(?,?,?,?,?,?,?)')
         ->execute([$type, $slug, $position, $published ?? 1, $json, now(), now()]);
     return (int)db()->lastInsertId();
+}
+
+/* ---------- home page blocks ---------- */
+const SECTION_BUILTIN = [
+    'hero' => 'Diaporama et barre de réservation', 'film' => 'Film', 'intro' => 'Introduction', 'facts' => 'Chiffres clés', 'trips' => 'Circuits',
+    'rockart' => 'Art rupestre', 'dests' => 'Destinations', 'why' => 'Pourquoi le Sahara', 'day' => 'Une journée dans le désert', 'culture' => 'Culture touarègue',
+    'incl' => 'Nos services', 'quote' => 'Citation', 'reviews' => 'Avis des voyageurs', 'gallery' => 'Bande photos', 'clips' => 'Capsules vidéo',
+    'faq' => 'Questions fréquentes', 'blog' => 'Derniers articles', 'cta' => 'Bandeau final',
+];
+const SECTION_CUSTOM = ['texte_photo' => 'Texte + photo à droite', 'photo_texte' => 'Photo à gauche + texte', 'texte' => 'Texte seul', 'photos' => 'Mosaïque de photos', 'bandeau' => 'Bandeau photo avec bouton'];
+/** Creates the default list of home blocks the first time (also on sites installed before blocks existed). */
+function ensure_sections(): void
+{
+    static $done = false;
+    if ($done) return; $done = true;
+    if ((int)db()->query("SELECT COUNT(*) FROM docs WHERE type = 'section'")->fetchColumn() > 0) return;
+    foreach (SECTION_BUILTIN as $k => $t) doc_save(null, 'section', '', ['kind' => $k, 'img' => '', 'imgs' => [], 'fr' => ['t' => $t, 'p' => '', 'btn' => '', 'url' => ''], 'en' => ['t' => $t, 'p' => '', 'btn' => '', 'url' => '']], 1);
 }
 
 /* ---------- text helpers ---------- */

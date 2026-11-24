@@ -253,3 +253,5 @@ code{background:var(--soft);padding:1px 6px;border-radius:4px}
   .acts>*,.acts form{margin:4px 4px 0 0}
   .tabs .hint{margin-left:0;flex-basis:100%}
 }
+
+.seo-l{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px}.seo-l li{position:relative;padding-left:26px;color:var(--mute)}.seo-l li:before{content:'○';position:absolute;left:4px;color:var(--mute)}.seo-l li.ok{color:var(--ink)}.seo-l li.ok:before{content:'✓';color:var(--ok);font-weight:700}.seo-l i{font-style:normal;font-size:12px;margin-left:6px;padding:1px 7px;border-radius:99px;background:var(--soft);border:1px solid var(--line)}

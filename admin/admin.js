@@ -164,4 +164,26 @@
   }
   var mf = $("[data-media-files]");
   if (mf) mf.addEventListener("change", function (e) { uploadAll(e.target.files, {}, $("[data-up-msg]")).then(function (r) { if (r.length) location.reload(); }); });
+  /* ----- blog: live SEO checklist ----- */
+  var seo = $("[data-seo]");
+  if (seo) {
+    var f = seo.closest("form"), q = function (n) { return f.querySelector('[name="' + n + '"]'); };
+    var val = function (n) { var x = q(n); return x ? x.value.trim() : ""; };
+    var set = function (k, ok, info) { var li = seo.querySelector('[data-k="' + k + '"]'); if (!li) return; li.classList.toggle("ok", !!ok); var i = li.querySelector("i"); if (i) i.textContent = info || ""; };
+    var check = function () {
+      var t = val("d[fr][t]"), d = val("d[fr][d]"), b = val("d[fr][body]");
+      var words = b ? b.replace(/[#*\[\]()]/g, " ").split(/\s+/).filter(Boolean).length : 0;
+      var h2 = (b.match(/^##\s+\S/gm) || []).length, links = (b.match(/\]\((circuit-|circuits\.html|reservation\.html)/g) || []).length;
+      set("title", t.length >= 30 && t.length <= 60, t.length + " car.");
+      set("desc", d.length >= 120 && d.length <= 160, d.length + " car.");
+      set("words", words >= 600, words + " mots");
+      set("h2", h2 >= 2, String(h2));
+      set("links", links >= 1, String(links));
+      set("img", val("d[img]") !== "");
+      set("cat", val("d[fr][category]") !== "");
+      set("en", val("d[en][t]") !== "" && val("d[en][body]").length > 200);
+    };
+    f.addEventListener("input", check); f.addEventListener("change", check); f.addEventListener("click", function () { setTimeout(check, 300); });
+    check();
+  }
 })();

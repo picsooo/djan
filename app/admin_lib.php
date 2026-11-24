@@ -16,7 +16,10 @@ function types(): array
             'blank' => ['img' => '', 'img2' => '', 'word' => '', 'circuit' => ''] + $lang(['t' => '', 's' => '', 'p' => [], 'see' => [], 'acc' => ''])],
         'post' => ['add' => 'Écrire un article', 'new' => 'Nouvel article', 'label' => 'Blog', 'one' => 'article', 'icon' => 'pen', 'slug' => true, 'url' => 'blog-%s.html',
             'help' => 'Vos articles. Ils aident Google à trouver votre site : un bon titre, une description et des liens vers vos circuits.',
-            'blank' => ['date' => $today, 'img' => '', 'author' => 'Mina'] + $lang(['t' => '', 'd' => '', 'body' => ''])],
+            'blank' => ['date' => $today, 'img' => '', 'author' => 'Mina'] + $lang(['t' => '', 'category' => '', 'd' => '', 'body' => ''])],
+        'section' => ['add' => 'Ajouter un bloc', 'new' => 'Nouveau bloc', 'label' => 'Blocs de l’accueil', 'one' => 'bloc', 'icon' => 'text', 'slug' => false,
+            'help' => 'Les sections de la page d’accueil, dans l’ordre d’affichage. Montez, descendez ou dépubliez une section, ou ajoutez vos propres blocs (texte, photos, bandeau). Le contenu des sections d’origine se modifie dans « Textes des pages ».',
+            'blank' => ['kind' => 'texte_photo', 'img' => '', 'imgs' => []] + $lang(['t' => '', 'p' => '', 'btn' => '', 'url' => ''])],
         'faq' => ['add' => 'Ajouter une question', 'new' => 'Nouvelle question', 'label' => 'FAQ', 'one' => 'question', 'icon' => 'help', 'slug' => false,
             'help' => 'Questions fréquentes. Cochez « Afficher sur l’accueil » pour les mettre en avant.',
             'blank' => ['home' => false] + $lang(['g' => '', 'q' => '', 'a' => ''])],
@@ -53,6 +56,7 @@ function page_list(): array
 
 /* ---------- labels ---------- */
 const LBL = [
+    'kind' => 'Type de bloc', 'btn' => 'Texte du bouton (facultatif)', 'url' => 'Lien du bouton (ex. circuits.html ou reservation.html)', 'category' => 'Catégorie (ex. Conseils, Culture, Destinations)',
     'email2' => 'Deuxième e-mail affiché', 'on_quote' => 'Tarif sur demande (ne pas afficher « À partir de »)', 'price_note' => 'Précision sous le prix', 'obs' => 'Observation (sous le programme)', 'nb' => 'Remarque (sous le programme)',
     'ra_h' => 'Bloc Art rupestre : titre', 'ra_p' => 'Bloc Art rupestre : texte', 'ra_link' => 'Bloc Art rupestre : bouton', 'cu_p' => 'Section Culture : texte', 'cu_link' => 'Section Culture : lien',
     'cta' => 'Texte du bouton', 'play' => 'Bouton lecture (accessibilité)', 'pause' => 'Bouton pause (accessibilité)', 'gal_p' => 'Texte de la section', 'cap_h' => 'Capsules : titre', 'cap_p' => 'Capsules : texte', 'cap_link' => 'Capsules : lien',
@@ -168,6 +172,12 @@ function field(string $key, $val, string $name, bool $en, int $depth): string
         $opts = '<option value="">—</option>';
         foreach (docs('circuit', false) as $c) $opts .= '<option value="' . e($c['slug']) . '"' . ($c['slug'] === $val ? ' selected' : '') . '>' . e($c['data']['fr']['t'] ?? $c['slug']) . '</option>';
         return '<label class="f"><span class="fl">' . $label . '</span><select name="' . $n . '">' . $opts . '</select></label>';
+    }
+    if ($key === 'kind') {
+        if (isset(SECTION_BUILTIN[$val])) return '<div class="f"><span class="fl">' . $label . '</span><input type="hidden" name="' . $n . '" value="' . e($val) . '"><p class="hint"><b>' . e(SECTION_BUILTIN[$val]) . '</b> : section d’origine du site. Son contenu se modifie dans « Textes des pages ». Ici, vous pouvez seulement la déplacer ou la dépublier ; les champs ci-dessous ne sont pas utilisés.</p></div>';
+        $opts = '';
+        foreach (SECTION_CUSTOM as $k => $t) $opts .= '<option value="' . $k . '"' . ($k === $val ? ' selected' : '') . '>' . $t . '</option>';
+        return '<label class="f"><span class="fl">' . $label . '</span><select name="' . $n . '">' . $opts . '</select><span class="hint">« Photo » sert aux blocs avec une photo et au bandeau, « Photos » à la mosaïque.</span></label>';
     }
     if ($key === 'cat') {
         $opts = '';
