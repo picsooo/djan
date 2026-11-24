@@ -307,6 +307,7 @@ function save_upload(array $f, int $max = 2200): string
     $dst = imagecreatetruecolor($nw, $nh);
     if ($keepAlpha) { imagealphablending($dst, false); imagesavealpha($dst, true); imagefill($dst, 0, 0, imagecolorallocatealpha($dst, 0, 0, 0, 127)); }
     imagecopyresampled($dst, $src, 0, 0, 0, 0, $nw, $nh, $w, $h);
+    watermark($dst);
     $base = slugify(pathinfo((string)$f['name'], PATHINFO_FILENAME)) ?: 'image';
     $dir = 'uploads/' . date('Y/m');
     if (!is_dir(ROOT . '/' . $dir)) mkdir(ROOT . '/' . $dir, 0775, true);
@@ -315,6 +316,28 @@ function save_upload(array $f, int $max = 2200): string
     $ok = $keepAlpha ? imagepng($dst, ROOT . '/' . $rel, 8) : imagejpeg($dst, ROOT . '/' . $rel, 84);
     if (!$ok) throw new RuntimeException('Impossible d’enregistrer l’image (droits du dossier uploads/).');
     return $rel;
+}
+
+/** Stamps the agency name on an uploaded photo: faint in the centre, small in the bottom-right corner. */
+function watermark($im, string $text = 'TOURING WITH MINA'): void
+{
+    $font = __DIR__ . '/fonts/antonio.ttf';
+    if (!function_exists('imagettftext') || !is_file($font)) return;
+    $w = imagesx($im); $h = imagesy($im);
+    if ($w < 500 || $h < 300) return;
+    imagealphablending($im, true);
+    $put = function (float $share, string $pos, int $alphaText, int $alphaShadow) use ($im, $w, $h, $font, $text) {
+        $box = imagettfbbox(100, 0, $font, $text); $bw = $box[2] - $box[0];
+        $size = max(9, 100 * ($w * $share) / max(1, $bw));
+        $box = imagettfbbox($size, 0, $font, $text); $tw = $box[2] - $box[0]; $th = $box[1] - $box[7];
+        if ($pos === 'c') { $x = (int)(($w - $tw) / 2); $y = (int)(($h + $th) / 2); }
+        else { $m = (int)max(10, $w * 0.018); $x = $w - $tw - $m; $y = $h - $m; }
+        $d = max(1, (int)round($size / 28));
+        imagettftext($im, $size, 0, $x + $d, $y + $d, imagecolorallocatealpha($im, 0, 0, 0, $alphaShadow), $font, $text);
+        imagettftext($im, $size, 0, $x, $y, imagecolorallocatealpha($im, 255, 255, 255, $alphaText), $font, $text);
+    };
+    $put(0.46, 'c', 100, 116);
+    $put(0.15, 'r', 45, 95);
 }
 
 /** All images available in the media library. */
