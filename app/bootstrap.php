@@ -260,16 +260,73 @@ function csrf_token(): string
 function csrf_field(): string { return '<input type="hidden" name="_csrf" value="' . e(csrf_token()) . '">'; }
 function csrf_ok(): bool { return hash_equals($_SESSION['csrf'] ?? '', (string)($_POST['_csrf'] ?? '')); }
 
-function send_mail(string $to, string $subject, string $body, string $replyTo = ''): bool
+function send_mail(string $to, string $subject, string $body, string $replyTo = '', string $html = ''): bool
 {
     // Several recipients can be given, separated by commas.
     $list = array_values(array_unique(array_filter(array_map('trim', preg_split('/[,;\s]+/', $to) ?: []), fn($a) => (bool)filter_var($a, FILTER_VALIDATE_EMAIL))));
     if (!$list || !function_exists('mail')) return false;
     $to = implode(', ', $list);
+    if (PHP_SAPI === 'cli-server' && ($dump = getenv('TWM_MAIL_DUMP'))) { file_put_contents($dump, $html !== '' ? $html : $body); return true; } // local preview only
     $host = preg_replace('/^www\./', '', (string)($_SERVER['HTTP_HOST'] ?? 'localhost'));
-    $h = "From: Touring with Mina <noreply@$host>\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+    $h = "From: Touring with Mina <noreply@$host>\r\nMIME-Version: 1.0\r\n";
     if ($replyTo && filter_var($replyTo, FILTER_VALIDATE_EMAIL)) $h .= "Reply-To: $replyTo\r\n";
-    return @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $h);
+    if ($html === '') { $h .= "Content-Type: text/plain; charset=UTF-8\r\n"; $msg = $body; }
+    else {
+        // Plain text first, then the designed version: mail apps show the best one they can.
+        $b = 'twm' . bin2hex(random_bytes(8));
+        $h .= "Content-Type: multipart/alternative; boundary=\"$b\"\r\n";
+        $msg = "--$b\r\nContent-Type: text/plain; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($body))
+            . "--$b\r\nContent-Type: text/html; charset=UTF-8\r\nContent-Transfer-Encoding: base64\r\n\r\n" . chunk_split(base64_encode($html)) . "--$b--\r\n";
+    }
+    return @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $msg, $h);
+}
+
+/** Absolute address of the site (for links inside e-mails). */
+function site_url(): string
+{
+    $d = rtrim((string)(settings()['domain'] ?? ''), '/');
+    return $d !== '' ? $d : (is_https() ? 'https' : 'http') . '://' . ($_SERVER['HTTP_HOST'] ?? 'localhost') . base_url();
+}
+
+/**
+ * The e-mail the agency receives for a booking, a message or a review.
+ * $rows: [[label, value], ...]  $buttons: [[text, url, primary?], ...]
+ */
+function mail_html(string $kicker, string $title, string $intro, array $rows, string $text = '', array $buttons = []): string
+{
+    $ink = '#22150E'; $mute = '#6f5b4c'; $bg = '#FBF5EA'; $card = '#ffffff'; $line = '#eadfcc'; $acc = '#E4521B'; $dark = '#1B1436';
+    $ff = "font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;"; $fd = "font-family:'Arial Narrow','Helvetica Neue',Arial,sans-serif;";
+    $r = '';
+    foreach ($rows as [$k, $v]) {
+        if (trim((string)$v) === '') continue;
+        $r .= '<tr><td style="padding:11px 0;border-bottom:1px solid ' . $line . ';' . $ff . 'font-size:12px;line-height:16px;color:' . $mute . ';text-transform:uppercase;letter-spacing:.6px;width:38%;vertical-align:top">' . e($k) . '</td>'
+            . '<td style="padding:11px 0 11px 14px;border-bottom:1px solid ' . $line . ';' . $ff . 'font-size:15px;line-height:21px;color:' . $ink . ';font-weight:bold;vertical-align:top;word-break:break-word">' . nl2br(e($v)) . '</td></tr>';
+    }
+    $rowsHtml = $r !== '' ? '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid ' . $line . ';margin:0 0 6px">' . $r . '</table>' : '';
+    $textHtml = trim($text) !== '' ? '<div style="margin:22px 0 4px;padding:16px 18px;background:' . $bg . ';border-left:3px solid ' . $acc . ';' . $ff . 'font-size:15px;line-height:23px;color:' . $ink . '">' . nl2br(e(trim($text))) . '</div>' : '';
+    $b = '';
+    foreach ($buttons as $x) {
+        [$t, $u] = $x; $prim = !empty($x[2]);
+        $b .= '<table role="presentation" cellpadding="0" cellspacing="0" style="display:inline-table;margin:0 8px 8px 0"><tr><td style="border-radius:4px;background:' . ($prim ? $acc : $card) . ';border:1.5px solid ' . ($prim ? $acc : $ink) . '">'
+            . '<a href="' . e($u) . '" style="display:inline-block;padding:12px 20px;' . $fd . 'font-size:14px;line-height:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;text-decoration:none;color:' . ($prim ? '#ffffff' : $ink) . '">' . e($t) . '</a></td></tr></table>';
+    }
+    $btns = $b !== '' ? '<div style="margin:26px 0 0">' . $b . '</div>' : '';
+    $site = e(preg_replace('#^https?://#', '', site_url()));
+    return '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><title>' . e($title) . '</title></head>'
+        . '<body style="margin:0;padding:0;background:' . $bg . '"><div style="display:none;max-height:0;overflow:hidden;opacity:0">' . e($intro) . '</div>'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $bg . '"><tr><td align="center" style="padding:28px 14px">'
+        . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px">'
+        . '<tr><td style="background:' . $dark . ';padding:26px 30px;border-radius:8px 8px 0 0"><table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>'
+        . '<td style="' . $fd . 'font-size:22px;line-height:24px;font-weight:bold;letter-spacing:1.5px;text-transform:uppercase;color:#FBF5EA">Touring with Mina</td>'
+        . '<td align="right" style="' . $ff . 'font-size:12px;line-height:16px;color:#b9b0cf">Djanet · Tassili n’Ajjer</td></tr></table></td></tr>'
+        . '<tr><td style="background:' . $acc . ';height:4px;line-height:4px;font-size:0">&nbsp;</td></tr>'
+        . '<tr><td style="background:' . $card . ';padding:32px 30px 34px;border-radius:0 0 8px 8px">'
+        . '<div style="' . $ff . 'font-size:12px;line-height:16px;font-weight:bold;letter-spacing:1px;text-transform:uppercase;color:' . $acc . '">' . e($kicker) . '</div>'
+        . '<h1 style="margin:8px 0 10px;' . $fd . 'font-size:30px;line-height:33px;font-weight:bold;text-transform:uppercase;color:' . $ink . '">' . e($title) . '</h1>'
+        . '<p style="margin:0 0 22px;' . $ff . 'font-size:15px;line-height:23px;color:' . $mute . '">' . e($intro) . '</p>'
+        . $rowsHtml . $textHtml . $btns . '</td></tr>'
+        . '<tr><td style="padding:18px 30px 0;' . $ff . 'font-size:12px;line-height:18px;color:' . $mute . '">Message envoyé automatiquement par le site ' . $site . '. Pour répondre au voyageur, utilisez les boutons ci-dessus ou « Répondre ».</td></tr>'
+        . '</table></td></tr></table></body></html>';
 }
 
 require __DIR__ . '/migrate.php';
