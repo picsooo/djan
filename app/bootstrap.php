@@ -262,7 +262,10 @@ function csrf_ok(): bool { return hash_equals($_SESSION['csrf'] ?? '', (string)(
 
 function send_mail(string $to, string $subject, string $body, string $replyTo = ''): bool
 {
-    if (!filter_var($to, FILTER_VALIDATE_EMAIL) || !function_exists('mail')) return false;
+    // Several recipients can be given, separated by commas.
+    $list = array_values(array_unique(array_filter(array_map('trim', preg_split('/[,;\s]+/', $to) ?: []), fn($a) => (bool)filter_var($a, FILTER_VALIDATE_EMAIL))));
+    if (!$list || !function_exists('mail')) return false;
+    $to = implode(', ', $list);
     $host = preg_replace('/^www\./', '', (string)($_SERVER['HTTP_HOST'] ?? 'localhost'));
     $h = "From: Touring with Mina <noreply@$host>\r\nMIME-Version: 1.0\r\nContent-Type: text/plain; charset=UTF-8\r\n";
     if ($replyTo && filter_var($replyTo, FILTER_VALIDATE_EMAIL)) $h .= "Reply-To: $replyTo\r\n";

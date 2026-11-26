@@ -85,7 +85,7 @@ const LBL = [
     'visa_src' => 'Lien source (visa)', 'more' => 'Titre « autre question »', 'more_p' => 'Texte « autre question »',
     'site_name' => 'Nom du site', 'logo' => 'Logo (fond clair)', 'logo_light' => 'Logo blanc (sur photo, facultatif)', 'favicon' => 'Icône d’onglet (carré)',
     'wa' => 'Numéro WhatsApp (chiffres, avec indicatif)', 'wa_display' => 'WhatsApp affiché', 'phone' => 'Téléphone (format international)', 'phone_display' => 'Téléphone affiché',
-    'email' => 'E-mail affiché sur le site', 'notify_email' => 'E-mail qui reçoit les alertes (réservations, avis)', 'address' => 'Adresse',
+    'email' => 'E-mail affiché sur le site', 'notify_email' => 'E-mails qui reçoivent les demandes (réservations, contact, avis), séparés par une virgule', 'address' => 'Adresse',
     'instagram' => 'Lien Instagram', 'facebook' => 'Lien Facebook', 'domain' => 'Adresse du site (https://…)', 'indexable' => 'Le site est visible sur Google', 'en_default' => 'Ouvrir l’accueil en anglais par défaut (le français reste accessible par le bouton FR)',
     'show_illus' => 'Afficher le badge « Contenu illustratif » (à décocher quand vos vrais textes sont en place)', 'og_img' => 'Image de partage (Facebook, WhatsApp)',
     'tagline' => 'Phrase de présentation (pied de page, Google)', 'seo_title' => 'Titre de l’accueil sur Google', 'credit' => 'Crédit en bas de page',
@@ -214,7 +214,7 @@ function field(string $key, $val, string $name, bool $en, int $depth): string
     }
     $long = in_array($key, LONG_KEYS, true) || mb_strlen((string)$val) > 90;
     if ($long) return '<label class="f"><span class="fl">' . $label . '</span><textarea name="' . $n . '" rows="' . max(2, min(8, (int)ceil(mb_strlen((string)$val) / 90) + 1)) . '">' . e($val) . '</textarea></label>';
-    $type = in_array($key, ['email', 'notify_email'], true) ? 'email' : (in_array($key, ['instagram', 'facebook', 'domain', 'unesco_url', 'visa_src'], true) ? 'url' : 'text');
+    $type = in_array($key, ['email'], true) ? 'email' : (in_array($key, ['instagram', 'facebook', 'domain', 'unesco_url', 'visa_src'], true) ? 'url' : 'text');
     return '<label class="f"><span class="fl">' . $label . '</span><input type="' . $type . '" name="' . $n . '" value="' . e($val) . '"></label>';
 }
 

@@ -3,7 +3,7 @@
    They only touch what they name (photo slots, new pages); texts already edited in the admin are left alone. */
 declare(strict_types=1);
 
-const MIGRATIONS = ['2026_11_new_media', '2026_11_english_first'];
+const MIGRATIONS = ['2026_11_new_media', '2026_11_english_first', '2026_11_notify_both'];
 
 function migrate(): void
 {
@@ -38,6 +38,19 @@ function mig_2026_11_english_first(): void
     $st = db()->prepare("SELECT * FROM docs WHERE type = 'settings' LIMIT 1");
     $st->execute();
     if ($r = $st->fetch()) { $d = row_doc($r); $d['data']['en_default'] = true; doc_save($d['id'], 'settings', $d['slug'], $d['data']); }
+}
+
+/** Booking, contact and review alerts go to both of the agency's addresses. */
+function mig_2026_11_notify_both(): void
+{
+    $st = db()->prepare("SELECT * FROM docs WHERE type = 'settings' LIMIT 1");
+    $st->execute();
+    if (!($r = $st->fetch())) return;
+    $d = row_doc($r); $S = $d['data'];
+    $all = array_merge(preg_split('/[,;\s]+/', (string)($S['notify_email'] ?? '')) ?: [], [$S['email'] ?? '', $S['email2'] ?? '']);
+    $all = array_values(array_unique(array_filter(array_map('trim', $all), fn($a) => (bool)filter_var($a, FILTER_VALIDATE_EMAIL))));
+    $d['data']['notify_email'] = implode(', ', $all);
+    doc_save($d['id'], 'settings', $d['slug'], $d['data']);
 }
 
 /** New photos and videos sent by the client (November 2026): rock art, folklore, Sebiba page, testimonials, terms. */

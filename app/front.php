@@ -543,7 +543,7 @@ function page_contact(): string
     if (!empty($S['phone'])) $items .= '<a class="ct-i rv" href="tel:' . e($S['phone']) . '"><span>' . e($C['tel'] ?? '') . '</span><b>' . e($S['phone_display'] ?? $S['phone']) . '</b></a>';
     if (!empty($S['email'])) $items .= '<a class="ct-i rv" href="mailto:' . e($S['email']) . '"><span>' . e($C['mail'] ?? '') . '</span><b>' . e($S['email']) . '</b></a>';
     $items .= '<div class="ct-i rv"><span>' . e($C['where'] ?? '') . '</span><b>' . e($C['where_v'] ?? '') . '</b></div><div class="ct-i rv"><span>' . e($C['langs_l'] ?? '') . '</span><b>' . e($C['langs'] ?? '') . '</b></div>';
-    $cfg = json_encode(['wa' => $w, 'mail' => $S['email'] ?? '', 'hello' => $C['hello'] ?? '', 'saved' => $C['saved'] ?? ''], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG);
+    $cfg = json_encode(['wa' => $w, 'mail' => implode(',', array_filter([$S['email'] ?? '', $S['email2'] ?? ''])), 'hello' => $C['hello'] ?? '', 'saved' => $C['saved'] ?? ''], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG);
     $body = phead($C['h'] ?? '', $C['p'] ?? '') . '<section class="sec ct"><div class="ct-l">' . $items . '</div>'
         . '<form class="ct-f box rv" id="ctf" novalidate><h3>' . e($C['form_h'] ?? '') . '</h3>'
         . '<label class="fld"><span class="fl">' . e($C['name'] ?? '') . '</span><input name="name" autocomplete="name"></label>'
@@ -644,7 +644,7 @@ function page_booking(): string
         $fs .= '<fieldset class="step' . ($i === 0 ? ' on' : '') . '" data-step="' . $i . '"><legend><i>' . ($i + 1) . '/5</i>' . e($names[$i] ?? '') . '</legend>' . $s . '</fieldset>';
         $prog .= '<li' . ($i === 0 ? ' class="on"' : '') . '><button type="button" data-go="' . $i . '"><i>' . ($i + 1) . '</i>' . e($names[$i] ?? '') . '</button></li>';
     }
-    $cfg = json_encode(['wa' => $w, 'mail' => $S['email'] ?? '', 'hello' => $B['hello'] ?? '', 'subject' => $B['subject'] ?? '', 'yes' => $B['yes'] ?? '', 'empty' => $B['sum_empty'] ?? '', 'steps' => $names, 'saved' => $B['saved'] ?? ''], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG);
+    $cfg = json_encode(['wa' => $w, 'mail' => implode(',', array_filter([$S['email'] ?? '', $S['email2'] ?? ''])), 'hello' => $B['hello'] ?? '', 'subject' => $B['subject'] ?? '', 'yes' => $B['yes'] ?? '', 'empty' => $B['sum_empty'] ?? '', 'steps' => $names, 'saved' => $B['saved'] ?? ''], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG);
     $body = phead($B['h'] ?? '', $B['p'] ?? '') . '<section class="sec bk"><form id="bk" novalidate><ol class="prog" id="prog">' . $prog . '</ol>' . $fs
         . '<p class="err" id="bkErr" role="alert">' . e($B['err'] ?? '') . '</p><p class="ok" id="bkOk" role="status"></p>'
         . '<div class="bk-nav"><button type="button" class="btn btn-line" id="bkPrev" hidden>' . e($B['prev'] ?? '') . '</button><button type="button" class="btn" id="bkNext">' . e($B['next'] ?? '') . '</button>'
