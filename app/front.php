@@ -51,7 +51,7 @@ function shell(string $file, string $body, array $o = []): string
         $cur = $h === $file || ($h === 'circuits.html' && str_starts_with($file, 'circuit-')) || ($h === 'blog.html' && str_starts_with($file, 'blog-'));
         $links .= '<a href="' . $h . '"' . ($cur ? ' aria-current="page"' : '') . '>' . eu($k) . '</a>';
     }
-    $other = $l === 'fr' ? 'en/' . $path : '../' . $path;
+    $other = $l === 'fr' ? 'en/' . $path : '../' . $path . '?fr=1';
     $otherL = $l === 'fr' ? 'en' : 'fr';
     $logo = e($site);
     $logoCls = 'logo';

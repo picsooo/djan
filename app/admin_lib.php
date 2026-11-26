@@ -86,7 +86,7 @@ const LBL = [
     'site_name' => 'Nom du site', 'logo' => 'Logo (fond clair)', 'logo_light' => 'Logo blanc (sur photo, facultatif)', 'favicon' => 'Icône d’onglet (carré)',
     'wa' => 'Numéro WhatsApp (chiffres, avec indicatif)', 'wa_display' => 'WhatsApp affiché', 'phone' => 'Téléphone (format international)', 'phone_display' => 'Téléphone affiché',
     'email' => 'E-mail affiché sur le site', 'notify_email' => 'E-mail qui reçoit les alertes (réservations, avis)', 'address' => 'Adresse',
-    'instagram' => 'Lien Instagram', 'facebook' => 'Lien Facebook', 'domain' => 'Adresse du site (https://…)', 'indexable' => 'Le site est visible sur Google',
+    'instagram' => 'Lien Instagram', 'facebook' => 'Lien Facebook', 'domain' => 'Adresse du site (https://…)', 'indexable' => 'Le site est visible sur Google', 'en_default' => 'Ouvrir l’accueil en anglais par défaut (le français reste accessible par le bouton FR)',
     'show_illus' => 'Afficher le badge « Contenu illustratif » (à décocher quand vos vrais textes sont en place)', 'og_img' => 'Image de partage (Facebook, WhatsApp)',
     'tagline' => 'Phrase de présentation (pied de page, Google)', 'seo_title' => 'Titre de l’accueil sur Google', 'credit' => 'Crédit en bas de page',
     'form_h' => 'Titre du formulaire', 'send' => 'Bouton d’envoi', 'thanks' => 'Message de remerciement', 'error' => 'Message d’erreur', 'empty' => 'Texte quand il n’y a pas encore d’avis',
@@ -105,7 +105,7 @@ const LBL_LINES = [
 ];
 const IMG_KEYS = ['intro_img', 'food_img', 'img', 'img2', 'logo', 'logo_light', 'favicon', 'hero_img', 'quote_img', 'cta_img', 'og_img'];
 const IMGS_KEYS = ['folk_gal', 'fam_imgs', 'imgs', 'slides', 'intro_imgs', 'strip', 'ra_imgs', 'cu_imgs', 'gal', 'art_imgs'];
-const BOOL_KEYS = ['on_quote', 'home', 'indexable', 'show_illus', 'sample'];
+const BOOL_KEYS = ['en_default', 'on_quote', 'home', 'indexable', 'show_illus', 'sample'];
 const INT_KEYS = ['rating'];
 const LONG_KEYS = ['s', 'p', 'lead', 'sub', 'text', 'quote', 'acc', 'intro_p', 'intro_p2', 'a', 'tagline', 'note', 'more_p', 'cta_p', 'foot', 'hello', 'direct', 'thanks', 'saved', 'done_p', 'trips_p', 'incl_p'];
 const CATS = ['land' => 'Paysages', 'people' => 'Rencontres', 'camp' => 'Bivouac', 'art' => 'Art rupestre'];

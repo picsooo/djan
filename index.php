@@ -10,6 +10,14 @@ require APP . '/front.php';
 $lang = ($_GET['l'] ?? '') === 'en' ? 'en' : 'fr';
 $p = (string)($_GET['p'] ?? '');
 
+// English first: the home page opens in English unless the visitor has chosen or is browsing the French version.
+if ($lang === 'fr' && !empty(settings()['en_default'])) {
+    $home = in_array(preg_replace('/\.html$/', '', strtolower($p)), ['', 'index'], true);
+    $choseFr = isset($_GET['fr']) || !empty($_COOKIE['tw_fr']);
+    if ($home && !$choseFr) { header('Location: ' . base_url() . '/en/', true, 302); exit; }
+    if (empty($_COOKIE['tw_fr']) && !in_array($p, ['sitemap', 'robots'], true)) setcookie('tw_fr', '1', ['expires' => time() + 31536000, 'path' => '/', 'samesite' => 'Lax']);
+}
+
 header('X-Content-Type-Options: nosniff');
 header('Referrer-Policy: strict-origin-when-cross-origin');
 header('X-Frame-Options: SAMEORIGIN');

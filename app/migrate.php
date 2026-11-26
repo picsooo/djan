@@ -3,7 +3,7 @@
    They only touch what they name (photo slots, new pages); texts already edited in the admin are left alone. */
 declare(strict_types=1);
 
-const MIGRATIONS = ['2026_11_new_media'];
+const MIGRATIONS = ['2026_11_new_media', '2026_11_english_first'];
 
 function migrate(): void
 {
@@ -31,6 +31,14 @@ function mig_page(string $slug): array
     return $r ? row_doc($r) : ['id' => null, 'data' => []];
 }
 function mig_save_page(string $slug, array $doc): void { doc_save($doc['id'] ?: null, 'page', $slug, $doc['data'], 1); }
+
+/** The client's travellers are mostly foreigners: the home page opens in English (can be switched off in Réglages). */
+function mig_2026_11_english_first(): void
+{
+    $st = db()->prepare("SELECT * FROM docs WHERE type = 'settings' LIMIT 1");
+    $st->execute();
+    if ($r = $st->fetch()) { $d = row_doc($r); $d['data']['en_default'] = true; doc_save($d['id'], 'settings', $d['slug'], $d['data']); }
+}
 
 /** New photos and videos sent by the client (November 2026): rock art, folklore, Sebiba page, testimonials, terms. */
 function mig_2026_11_new_media(): void
