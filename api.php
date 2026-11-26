@@ -51,7 +51,7 @@ if ($action === 'review') {
     $name = str_in($in['name'] ?? '', 60);
     $text = str_in($in['text'] ?? '', 2000);
     $rating = max(1, min(5, (int)($in['rating'] ?? 5)));
-    if ($name === '' || mb_strlen($text) < 10) out(422, ['ok' => false]);
+    if ($name === '' || mb_strlen($text) < 10 || empty($in['consent'])) out(422, ['ok' => false]);
     $circuit = preg_replace('/[^a-z0-9-]/', '', (string)($in['circuit'] ?? ''));
     throttle_hit('review');
     doc_save(null, 'review', '', ['name' => $name, 'origin' => str_in($in['origin'] ?? '', 60), 'circuit' => $circuit, 'rating' => $rating,

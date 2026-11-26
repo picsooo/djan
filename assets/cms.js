@@ -20,8 +20,8 @@
     err.classList.remove("show");
     var r = f.querySelector("input[name=rating]:checked");
     var data = { action: "review", lang: window.TWLANG || "fr", name: f.elements.name.value.trim(), origin: f.elements.origin.value.trim(),
-      circuit: f.elements.circuit.value, rating: r ? r.value : 5, text: f.elements.text.value.trim(), website: f.elements.website.value, t0: f.elements.t0.value };
-    if (!data.name || data.text.length < 10) { err.classList.add("show"); return; }
+      circuit: f.elements.circuit.value, rating: r ? r.value : 5, text: f.elements.text.value.trim(), website: f.elements.website.value, t0: f.elements.t0.value, consent: f.elements.consent && f.elements.consent.checked ? 1 : 0 };
+    if (!data.name || data.text.length < 10 || !data.consent) { err.classList.add("show"); return; }
     b.disabled = true;
     post(data).then(function (res) { if (!res.ok) throw 0; ok.classList.add("show"); f.reset(); b.disabled = false; })
       .catch(function () { err.classList.add("show"); b.disabled = false; });

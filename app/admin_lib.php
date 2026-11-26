@@ -39,6 +39,7 @@ function page_list(): array
         'why' => ['Pourquoi le Sahara', 'Les avantages présentés sur l’accueil et sur la page Art rupestre'],
         'rockart' => ['Art rupestre', 'Tous les textes et photos de la page Art rupestre'],
         'culture' => ['Culture touarègue', 'Folklore, artisanat et gastronomie'],
+        'sebiba' => ['Sebiba', 'La page Sebiba : présentation, étapes des préparatifs, jour de la fête'],
         'day' => ['Une journée dans le désert', 'Les cinq moments de la section animée de l’accueil'],
         'about' => ['Présentation', 'Votre histoire, vos valeurs, les étapes de préparation'],
         'trips' => ['Page Circuits', 'Introduction de la page et la liste « inclus / non inclus » des circuits'],
@@ -50,12 +51,16 @@ function page_list(): array
         'blog' => ['Page Blog', 'Titre et introduction'],
         'reviews' => ['Page Avis', 'Titre et textes du formulaire « Laisser un avis »'],
         'booking' => ['Formulaire de réservation', 'Toutes les questions et réponses proposées'],
+        'terms' => ['Conditions d’utilisation', 'Règles du site, avis, photos et données personnelles'],
         'ui' => ['Libellés du site', 'Menu, boutons, pied de page'],
     ];
 }
 
 /* ---------- labels ---------- */
 const LBL = [
+    'folk_gal_h' => 'Titre des photos du folklore', 'folk_vid_h' => 'Titre des vidéos du folklore', 'folk_gal' => 'Photos du folklore', 'fam_imgs' => 'Photos du bloc Famille', 'fam_h' => 'Bloc Famille : titre', 'fam_p' => 'Bloc Famille : texte', 'fam_link' => 'Bloc Famille : bouton',
+    'vid_h' => 'Titre des vidéos', 'vid_p' => 'Texte des vidéos', 'vid_cap' => 'Légende de la vidéo', 'consent' => 'Phrase d’accord à cocher', 'terms' => 'Lien vers les conditions', 'link_h' => 'Page du lien d’avis : titre', 'link_p' => 'Page du lien d’avis : texte',
+    'steps_h' => 'Titre des étapes', 'steps_p' => 'Texte des étapes', 'fest_h' => 'Titre du jour de la fête', 'fest_p' => 'Texte du jour de la fête', 'src' => 'Texte du lien source', 'cta_btn' => 'Bouton', 'vid' => 'Vidéo (nom du fichier, ne pas modifier)',
     'kind' => 'Type de bloc', 'btn' => 'Texte du bouton (facultatif)', 'url' => 'Lien du bouton (ex. circuits.html ou reservation.html)', 'category' => 'Catégorie (ex. Conseils, Culture, Destinations)',
     'email2' => 'Deuxième e-mail affiché', 'on_quote' => 'Tarif sur demande (ne pas afficher « À partir de »)', 'price_note' => 'Précision sous le prix', 'obs' => 'Observation (sous le programme)', 'nb' => 'Remarque (sous le programme)',
     'ra_h' => 'Bloc Art rupestre : titre', 'ra_p' => 'Bloc Art rupestre : texte', 'ra_link' => 'Bloc Art rupestre : bouton', 'cu_p' => 'Section Culture : texte', 'cu_link' => 'Section Culture : lien',
@@ -91,7 +96,7 @@ const LBL = [
 ];
 const LBL_LIST = [
     'p' => 'Programme jour par jour', 'incl' => 'Ce qui est compris', 'facts' => 'Chiffres clés', 'blocks' => 'Blocs de texte', 'values' => 'Valeurs', 'proc' => 'Étapes de préparation',
-    'steps' => 'Les moments de la journée', 'items' => 'Avantages', 'eras' => 'Périodes', 'where' => 'Où les voir', 'folk' => 'Groupes et danses', 'food' => 'Plats et boissons', 'secs' => 'Rubriques', 'seasons' => 'Saisons', 'filters' => 'Filtres',
+    'steps' => 'Les moments de la journée', 'items' => 'Avantages', 'eras' => 'Périodes', 'where' => 'Où les voir', 'folk' => 'Groupes et danses', 'food' => 'Plats et boissons', 'secs' => 'Rubriques', 'videos' => 'Vidéos témoignages', 'seasons' => 'Saisons', 'filters' => 'Filtres',
 ];
 const LBL_LINES = [
     'p' => 'Paragraphes (un par ligne)', 'see' => 'À voir (un par ligne)', 'tags' => 'Mots-clés (un par ligne)', 'lines' => 'Lignes du grand titre (une par ligne)',
@@ -99,7 +104,7 @@ const LBL_LINES = [
     'steps' => 'Noms des étapes (un par ligne)', 'included' => 'Inclus dans tous les circuits (un par ligne)', 'not_included' => 'Non inclus (un par ligne)',
 ];
 const IMG_KEYS = ['intro_img', 'food_img', 'img', 'img2', 'logo', 'logo_light', 'favicon', 'hero_img', 'quote_img', 'cta_img', 'og_img'];
-const IMGS_KEYS = ['imgs', 'slides', 'intro_imgs', 'strip', 'ra_imgs', 'cu_imgs', 'gal', 'art_imgs'];
+const IMGS_KEYS = ['folk_gal', 'fam_imgs', 'imgs', 'slides', 'intro_imgs', 'strip', 'ra_imgs', 'cu_imgs', 'gal', 'art_imgs'];
 const BOOL_KEYS = ['on_quote', 'home', 'indexable', 'show_illus', 'sample'];
 const INT_KEYS = ['rating'];
 const LONG_KEYS = ['s', 'p', 'lead', 'sub', 'text', 'quote', 'acc', 'intro_p', 'intro_p2', 'a', 'tagline', 'note', 'more_p', 'cta_p', 'foot', 'hello', 'direct', 'thanks', 'saved', 'done_p', 'trips_p', 'incl_p'];

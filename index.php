@@ -4,6 +4,7 @@ require __DIR__ . '/app/bootstrap.php';
 // Pages always reflect the latest content saved in the admin (no browser or server cache).
 header('Cache-Control: no-cache, no-store, must-revalidate'); header('Pragma: no-cache'); header('X-LiteSpeed-Cache-Control: no-cache');
 if (!installed()) { header('Location: install.php'); exit; }
+migrate();
 require APP . '/front.php';
 
 $lang = ($_GET['l'] ?? '') === 'en' ? 'en' : 'fr';

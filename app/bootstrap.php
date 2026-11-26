@@ -6,7 +6,7 @@ define('ROOT', dirname(__DIR__));
 define('DATA', ROOT . '/data');
 define('UPLOADS', ROOT . '/uploads');
 const LANGS = ['fr', 'en'];
-const CMS_VERSION = '1.2';
+const CMS_VERSION = '1.3';
 
 mb_internal_encoding('UTF-8');
 date_default_timezone_set('Africa/Algiers');
@@ -153,7 +153,7 @@ function doc_save(?int $id, string $type, string $slug, array $data, ?int $publi
 /* ---------- home page blocks ---------- */
 const SECTION_BUILTIN = [
     'hero' => 'Diaporama et barre de réservation', 'film' => 'Film', 'intro' => 'Introduction', 'facts' => 'Chiffres clés', 'trips' => 'Circuits',
-    'rockart' => 'Art rupestre', 'dests' => 'Destinations', 'why' => 'Pourquoi le Sahara', 'day' => 'Une journée dans le désert', 'culture' => 'Culture touarègue',
+    'rockart' => 'Art rupestre', 'dests' => 'Destinations', 'why' => 'Pourquoi le Sahara', 'day' => 'Une journée dans le désert', 'culture' => 'Culture touarègue', 'family' => 'Le désert en famille',
     'incl' => 'Nos services', 'quote' => 'Citation', 'reviews' => 'Avis des voyageurs', 'gallery' => 'Bande photos', 'clips' => 'Capsules vidéo',
     'faq' => 'Questions fréquentes', 'blog' => 'Derniers articles', 'cta' => 'Bandeau final',
 ];
@@ -268,3 +268,5 @@ function send_mail(string $to, string $subject, string $body, string $replyTo = 
     if ($replyTo && filter_var($replyTo, FILTER_VALIDATE_EMAIL)) $h .= "Reply-To: $replyTo\r\n";
     return @mail($to, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $h);
 }
+
+require __DIR__ . '/migrate.php';

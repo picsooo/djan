@@ -187,3 +187,4 @@
     check();
   }
 })();
+(function(){document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(!b)return;var t=b.getAttribute("data-copy"),o=b.textContent;function ok(){b.textContent="Copié ✓";setTimeout(function(){b.textContent=o},1600)}if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok,function(){})}else{var a=document.createElement("textarea");a.value=t;document.body.appendChild(a);a.select();try{document.execCommand("copy");ok()}catch(x){}a.remove()}})})();

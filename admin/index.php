@@ -6,6 +6,7 @@ header('Cache-Control: no-cache, no-store, must-revalidate'); header('Pragma: no
 require APP . '/admin_lib.php';
 
 if (!installed()) { header('Location: ../install.php'); exit; }
+migrate();
 session_boot();
 header('X-Frame-Options: DENY');
 header('X-Content-Type-Options: nosniff');
@@ -118,7 +119,7 @@ function layout(string $title, string $body, string $active = '', string $action
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex, nofollow">
 <meta name="csrf" content="$csrf"><title>{$title} · Administration</title>
-<link rel="icon" href="data:,"><link rel="stylesheet" href="$assets/admin.css?v=2"></head>
+<link rel="icon" href="data:,"><link rel="stylesheet" href="$assets/admin.css?v=3"></head>
 <body class="adm">
 <aside class="side" id="side"><div class="brand">$brand<small>Administration</small></div><nav>$links</nav>
 <div class="side-f">Réalisé par <a href="https://webminds.dz" target="_blank" rel="noopener">Webminds</a></div></aside>
@@ -127,7 +128,7 @@ function layout(string $title, string $body, string $active = '', string $action
 <div class="content">$flash$body</div>
 </div>
 <div class="modal" id="picker" hidden><div class="modal-b"><header><h2>Médiathèque</h2><label class="btn">Envoyer des images<input type="file" accept="image/jpeg,image/png,image/webp" multiple hidden data-upload></label><button type="button" class="x" data-close>×</button></header><p class="hint up-msg" data-up-msg></p><div class="grid-m" data-grid></div></div></div>
-<script src="$assets/admin.js?v=2"></script>
+<script src="$assets/admin.js?v=3"></script>
 </body></html>
 HTML;
     exit;
@@ -164,7 +165,7 @@ if ($r === 'login') {
     $site = e($S['site_name'] ?? '');
     $assets = e(base_url() . '/admin');
     $msg = $err ? '<p class="flash err">' . e($err) . '</p>' : '';
-    echo '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Connexion · ' . $site . '</title><link rel="icon" href="data:,"><link rel="stylesheet" href="' . $assets . '/admin.css?v=2"></head>'
+    echo '<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Connexion · ' . $site . '</title><link rel="icon" href="data:,"><link rel="stylesheet" href="' . $assets . '/admin.css?v=3"></head>'
         . '<body class="auth"><main class="auth-box">' . $brand . '<h1>' . $site . '</h1><p class="hint">Administration du site</p>' . $msg
         . '<form method="post" class="form">' . csrf_field() . '<label>E-mail<input type="email" name="email" required autocomplete="username" autofocus value="' . e($_POST['email'] ?? '') . '"></label>'
         . '<label>Mot de passe<input type="password" name="pass" required autocomplete="current-password"></label><button class="btn">Se connecter</button></form>'
@@ -230,6 +231,12 @@ if ($r === 'list' && isset($T[$_GET['type'] ?? ''])) {
                 . '<form method="post" action="' . e(url('delete')) . '" data-confirm="Supprimer cette photo de la galerie ?">' . $csrf . '<input type="hidden" name="id" value="' . $d['id'] . '"><button class="del" title="Supprimer">×</button></form></div>';
         }
         layout('Galerie', $h . '</div>', 'list:photo');
+    }
+    if ($type === 'review') {
+        $link = (is_https() ? 'https' : 'http') . '://' . ($_SERVER['HTTP_HOST'] ?? '') . base_url() . '/votre-avis.html';
+        $msg = "Bonjour, merci d'avoir voyagé avec Touring with Mina ! Pouvez-vous nous laisser un petit avis ? Cela prend deux minutes : $link";
+        $h .= '<div class="card share"><h3>Lien à envoyer à vos clients</h3><p>Envoyez ce lien après le voyage. L’avis arrive ici « À valider » : cliquez sur Publier pour l’afficher sur le site (page Avis et accueil).</p>'
+            . '<div class="share-r"><input readonly value="' . e($link) . '" onfocus="this.select()"><button type="button" class="btn-sm" data-copy="' . e($link) . '">Copier le lien</button><button type="button" class="btn-sm btn-ghost" data-copy="' . e($msg) . '">Copier le message WhatsApp</button></div></div>';
     }
     $h .= '<div class="card"><table class="tbl"><thead><tr><th></th><th>' . ($type === 'review' ? 'Avis' : 'Titre') . '</th><th>Infos</th><th>État</th><th class="r">Actions</th></tr></thead><tbody>';
     if (!$all) $h .= '<tr><td colspan="5" class="empty">Rien pour l’instant.</td></tr>';

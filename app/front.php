@@ -45,7 +45,7 @@ function shell(string $file, string $body, array $o = []): string
     $robots = !empty($S['indexable']) ? 'index, follow' : 'noindex, nofollow';
     $ogImg = $o['og'] ?? ($S['og_img'] ?? '');
     $ogUrl = preg_match('#^https?://#', $ogImg) ? $ogImg : "$dom/" . ltrim($ogImg, '/');
-    $nav = [['presentation.html', 'about'], ['circuits.html', 'trips'], ['destinations.html', 'dest'], ['art-rupestre.html', 'rockart'], ['culture.html', 'culture'], ['infos-pratiques.html', 'infos'], ['galerie.html', 'gallery'], ['blog.html', 'blog']];
+    $nav = [['presentation.html', 'about'], ['circuits.html', 'trips'], ['destinations.html', 'dest'], ['art-rupestre.html', 'rockart'], ['culture.html', 'culture'], ['sebiba.html', 'sebiba'], ['infos-pratiques.html', 'infos'], ['galerie.html', 'gallery'], ['blog.html', 'blog']];
     $links = '';
     foreach ($nav as [$h, $k]) {
         $cur = $h === $file || ($h === 'circuits.html' && str_starts_with($file, 'circuit-')) || ($h === 'blog.html' && str_starts_with($file, 'blog-'));
@@ -74,7 +74,7 @@ function shell(string $file, string $body, array $o = []): string
     $fTrips = '';
     foreach (docs('circuit') as $_c) $fTrips .= '<a href="circuit-' . e($_c['slug']) . '.html">' . e(T($_c)['t'] ?? '') . '</a>';
     $fExp = '';
-    foreach ([['presentation.html', 'about'], ['destinations.html', 'dest'], ['art-rupestre.html', 'rockart'], ['culture.html', 'culture'], ['galerie.html', 'gallery'], ['blog.html', 'blog']] as [$_h, $_k]) $fExp .= '<a href="' . $_h . '">' . eu($_k) . '</a>';
+    foreach ([['presentation.html', 'about'], ['destinations.html', 'dest'], ['art-rupestre.html', 'rockart'], ['culture.html', 'culture'], ['sebiba.html', 'sebiba'], ['galerie.html', 'gallery'], ['blog.html', 'blog']] as [$_h, $_k]) $fExp .= '<a href="' . $_h . '">' . eu($_k) . '</a>';
     $otherName = $l === 'fr' ? 'English' : 'Français';
     $year = date('Y');
     $credit = e($Sl['credit'] ?? '');
@@ -132,7 +132,7 @@ $body
     <nav aria-label="{$_(eu('plan'))}"><h4>{$_(eu('plan'))}</h4><a href="reservation.html">{$_(eu('book'))}</a><a href="infos-pratiques.html">{$_(eu('infos'))}</a><a href="faq.html">{$_(eu('faq'))}</a><a href="avis.html">{$_(eu('reviews'))}</a><a href="contact.html">{$_(eu('contact_p'))}</a></nav>
     <div><h4>{$_(eu('contact'))}</h4>$contact</div>
   </div>
-  <div class="foot-bot"><span>© $year {$_(e($site))}</span><span class="foot-bl"><a href="infos-pratiques.html">{$_(eu('infos'))}</a><a href="faq.html">{$_(eu('faq'))}</a><a href="contact.html">{$_(eu('contact_p'))}</a><a href="$other">$otherName</a></span><span class="foot-wm"><a href="https://www.webminds.dz" target="_blank" rel="noopener">$credit</a></span></div>
+  <div class="foot-bot"><span>© $year {$_(e($site))}</span><span class="foot-bl"><a href="infos-pratiques.html">{$_(eu('infos'))}</a><a href="faq.html">{$_(eu('faq'))}</a><a href="contact.html">{$_(eu('contact_p'))}</a><a href="conditions.html">{$_(eu('terms'))}</a><a href="$other">$otherName</a></span><span class="foot-wm"><a href="https://www.webminds.dz" target="_blank" rel="noopener">$credit</a></span></div>
 </footer>
 <a class="wa" href="https://wa.me/$w" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.4 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.4-.7-2.8-1.1-4.6-4-4.8-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg></a>
 <div class="lb" id="lb" aria-hidden="true"><button class="lb-x" data-lb="x" aria-label="{$_(eu('close'))}">×</button><button class="lb-p" data-lb="p" aria-label="‹">‹</button><img id="lbImg" alt=""><button class="lb-n" data-lb="n" aria-label="›">›</button></div>
@@ -233,6 +233,23 @@ function clips_html(string $cls = ''): string
         $o .= '<figure class="gv' . $cls . '"><video class="lazyv" muted loop playsinline preload="none" poster="' . vid("hv$k.jpg") . '" data-src="' . vid("hv$k.mp4") . '"></video><figcaption>' . e($t) . '</figcaption></figure>'; }
     return $o;
 }
+/** A vertical clip: silent loop that plays when visible, or a film with sound and controls. */
+function wclip(string $name, string $cap = '', bool $sound = false, string $cls = ''): string
+{
+    if ($name === '') return '';
+    $v = $sound
+        ? '<video controls controlslist="nodownload" disablepictureinpicture playsinline preload="none" poster="' . vid($name . '.jpg') . '" src="' . vid($name . '.mp4') . '"></video>'
+        : '<video class="lazyv" muted loop playsinline preload="none" poster="' . vid($name . '.jpg') . '" data-src="' . vid($name . '.mp4') . '"></video>';
+    return '<figure class="gv wv' . $cls . '">' . $v . ($cap !== '' ? '<figcaption>' . e($cap) . '</figcaption>' : '') . '</figure>';
+}
+function family_section(): string
+{
+    $Hd = page('home'); $H = P('home'); if (empty($H['fam_h'])) return '';
+    $im = '';
+    foreach (array_slice($Hd['fam_imgs'] ?? [], 0, 3) as $p) if ($p) $im .= '<figure class="rv-img"><img src="' . img($p) . '" alt="" loading="lazy"></figure>';
+    return '<section class="sec fam"><div class="fam-t"><h2 class="rv">' . e($H['fam_h']) . '</h2><p class="rv">' . e($H['fam_p'] ?? '') . '</p>'
+        . (!empty($H['fam_link']) ? '<a class="btn rv" href="reservation.html">' . e($H['fam_link']) . '</a>' : '') . '</div><div class="fam-m">' . $im . wclip('kids', '', false, ' rv') . '</div></section>';
+}
 function capsules(): string
 {
     $F = P('film'); $c = clips_html(' cap rv');
@@ -286,7 +303,13 @@ function page_culture(): string
     $Cd = page('culture'); $C = P('culture'); $Cfr = Pfr('culture');
     $folk = '';
     foreach (($C['folk'] ?? []) as $i => $x) $folk .= '<div class="why-i rv"><figure><img src="' . img($Cfr['folk'][$i]['img'] ?? ($x['img'] ?? '')) . '" alt="" loading="lazy"></figure><h3>' . e($x['t'] ?? '') . '</h3><p>' . e($x['p'] ?? '') . '</p></div>';
-    $folk = '<section class="sec" id="folklore">' . sec_head($C['folk_h'] ?? '', $C['folk_p'] ?? '') . '<div class="why-g cu-g">' . $folk . '</div></section>';
+    $fv = '';
+    foreach (($C['folk'] ?? []) as $i => $x) $fv .= wclip((string)($Cfr['folk'][$i]['vid'] ?? ''), (string)($x['t'] ?? ''), false, ' rv');
+    $fg = '';
+    foreach (($Cd['folk_gal'] ?? []) as $p) if ($p) $fg .= '<figure class="gi"><img src="' . img($p) . '" alt="" loading="lazy" data-zoom></figure>';
+    $folk = '<section class="sec" id="folklore">' . sec_head($C['folk_h'] ?? '', $C['folk_p'] ?? '') . '<div class="why-g cu-g">' . $folk . '</div>'
+        . ($fv ? '<h3 class="sub-h rv">' . e($C['folk_vid_h'] ?? '') . '</h3><div class="wv-grid">' . $fv . '</div>' : '')
+        . ($fg ? '<h3 class="sub-h rv">' . e($C['folk_gal_h'] ?? '') . '</h3><div class="ra-mos">' . $fg . '</div>' : '') . '</section>';
     $ai = '';
     foreach (array_slice($Cd['art_imgs'] ?? [], 0, 2) as $p) $ai .= '<figure class="rv-img"><img src="' . img($p) . '" alt="" loading="lazy"></figure>';
     $art = '<section class="sec ra-intro" id="artisanat"><div class="ra-t"><h2 class="rv">' . e($C['art_h'] ?? '') . '</h2><p class="rv">' . e($C['art_p'] ?? '') . '</p></div><div class="cu-art">' . $ai . '</div></section>';
@@ -374,7 +397,7 @@ function page_home(): string
     $posts = array_slice(docs('post'), 0, 3);
     $blog = $posts ? '<section class="sec">' . sec_head($H['blog_h'] ?? '', '', ['blog.html', U('all_posts')]) . '<div class="pgrid">' . implode('', array_map('pcard', $posts)) . '</div></section>' : '';
     $parts = ['hero' => $hero, 'film' => film_section(), 'intro' => $intro, 'facts' => $facts, 'trips' => $trips, 'rockart' => ra_teaser(), 'dests' => $dests, 'why' => why_section(), 'day' => day_section(),
-        'culture' => cu_teaser(), 'incl' => $incl, 'quote' => $quote, 'reviews' => $revs, 'gallery' => $gal, 'clips' => capsules(), 'faq' => $faqs, 'blog' => $blog, 'cta' => cta()];
+        'culture' => cu_teaser(), 'family' => family_section(), 'incl' => $incl, 'quote' => $quote, 'reviews' => $revs, 'gallery' => $gal, 'clips' => capsules(), 'faq' => $faqs, 'blog' => $blog, 'cta' => cta()];
     ensure_sections();
     $out = [];
     foreach (docs('section') as $sec) { $k = (string)($sec['data']['kind'] ?? ''); $out[] = $parts[$k] ?? custom_block($sec); }
@@ -438,6 +461,7 @@ function page_trip(array $c): string
         . '<section class="sec tdetail"><div><h2 class="rv">' . eu('program') . '</h2><ol class="days">' . $days . '</ol>' . $notes . '</div>'
         . '<aside><div class="box">' . $pbox . str_replace('__NINC__', $ninc, $incBox) . '<a class="btn" href="reservation.html?trip=' . e($c['slug']) . '">' . eu('book_this') . '</a></div></aside></section>'
         . ($imgs ? '<section class="trio">' . $imgs . '</section>' : '')
+        . (!empty($d['vid']) ? '<section class="sec tvid">' . wclip((string)$d['vid'], '', false, ' rv') . '<figure class="rv-img tvid-p"><img src="' . img($d['img'] ?? '') . '" alt="" loading="lazy" data-zoom></figure></section>' : '')
         . reviews_block($revs, U('reviews'), '', ['avis.html', U('reviews_all')])
         . '<section class="sec know"><a class="know-c rv" href="infos-pratiques.html"><h3>' . eu('infos') . '</h3><span class="more">' . $flights . '</span></a><a class="know-c rv" href="faq.html"><h3>' . eu('faq') . '</h3><span class="more">' . eu('all_faq') . '</span></a><a class="know-c rv" href="destinations.html"><h3>' . eu('dest') . '</h3><span class="more">' . eu('see_dest') . '</span></a></section>'
         . ($others ? '<section class="sec">' . sec_head(U('other_trips'), '', ['circuits.html', U('all_trips')]) . '<div class="tgrid">' . implode('', array_map('tcard', $others)) . '</div></section>' : '')
@@ -632,7 +656,7 @@ function page_booking(): string
     return shell('reservation.html', $body, ['title' => U('book'), 'desc' => $B['p'] ?? null, 'cls' => 'is-book']);
 }
 
-function page_reviews(): string
+function page_reviews(bool $only = false): string
 {
     $R = P('reviews');
     $list = docs('review');
@@ -648,10 +672,48 @@ function page_reviews(): string
         . '<div class="fld"><span class="fl">' . e($R['rating'] ?? '') . '</span><div class="rate">' . $rate . '</div></div>'
         . '<label class="fld"><span class="fl">' . e($R['text'] ?? '') . '</span><textarea name="text" rows="5" maxlength="2000"></textarea></label>'
         . '<input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="t0" value="' . time() . '">'
+        . '<label class="chk rev-ok"><input type="checkbox" name="consent" value="1"><span>' . e($R['consent'] ?? '') . ' <a href="conditions.html" target="_blank">' . e($R['terms'] ?? '') . '</a></span></label>'
         . '<p class="err" id="revErr" role="alert">' . e($R['error'] ?? '') . '</p><p class="ok" id="revOk" role="status">' . e($R['thanks'] ?? '') . '</p>'
         . '<button class="btn" type="submit">' . e($R['send'] ?? '') . '</button></form>';
-    $body = phead($R['h'] ?? '', $R['p'] ?? '') . '<section class="sec revs-all">' . $sample . $grid . '</section><section class="sec rev-form-sec">' . $form . '</section>' . cta();
+    if ($only) {
+        $body = phead($R['link_h'] ?? ($R['form_h'] ?? ''), $R['link_p'] ?? '') . '<section class="sec rev-form-sec rev-solo">' . $form . '</section>';
+        return shell('votre-avis.html', $body, ['title' => $R['link_h'] ?? U('leave_review'), 'desc' => $R['link_p'] ?? null]);
+    }
+    $vv = '';
+    foreach ((page('reviews')['videos'] ?? []) as $v) if (!empty($v['f'])) $vv .= wclip((string)$v['f'], (string)($v['name'] ?? ''), true, ' rv');
+    $vids = $vv ? '<section class="sec rev-vids">' . sec_head($R['vid_h'] ?? '', $R['vid_p'] ?? '') . '<div class="wv-grid">' . $vv . '</div></section>' : '';
+    $body = phead($R['h'] ?? '', $R['p'] ?? '') . $vids . '<section class="sec revs-all">' . $sample . $grid . '</section><section class="sec rev-form-sec">' . $form . '</section>' . cta();
     return shell('avis.html', $body, ['title' => U('reviews'), 'desc' => $R['p'] ?? null]);
+}
+
+function page_sebiba(): string
+{
+    $Sd = page('sebiba'); $S = P('sebiba'); $Sfr = Pfr('sebiba');
+    if (empty($S['h'])) return page_404();
+    $ps = implode('', array_map(fn($t) => '<p class="rv">' . e($t) . '</p>', $S['ps'] ?? []));
+    $src = !empty($S['src']) ? '<a class="facts-src sb-src rv" href="' . e($Sd['unesco_url'] ?? '#') . '" target="_blank" rel="noopener">' . e($S['src']) . '</a>' : '';
+    $intro = '<section class="sec sb-intro"><h2 class="rv">' . e($S['intro_h'] ?? '') . '</h2><div class="sb-ps">' . $ps . $src . '</div></section>';
+    $st = '';
+    foreach (($S['steps'] ?? []) as $i => $x) {
+        $im = (string)($Sfr['steps'][$i]['img'] ?? ''); $v = (string)($Sfr['steps'][$i]['vid'] ?? '');
+        $media = wclip($v, '', false, ' rv') . ($im !== '' ? '<figure class="rv-img sb-ph"><img src="' . img($im) . '" alt="" loading="lazy" data-zoom></figure>' : '');
+        $st .= '<li class="sb-step"><div class="sb-st"><i class="rv">' . ($i + 1) . '</i><h3 class="rv">' . e($x['t'] ?? '') . '</h3><p class="rv">' . e($x['p'] ?? '') . '</p></div><div class="sb-sm' . ($im === '' ? ' one' : '') . '">' . $media . '</div></li>';
+    }
+    $steps = $st ? '<section class="sec">' . sec_head($S['steps_h'] ?? '', $S['steps_p'] ?? '') . '<ol class="sb-steps">' . $st . '</ol></section>' : '';
+    $it = '';
+    foreach (($S['items'] ?? []) as $i => $x) $it .= '<div class="why-i rv"><figure><img src="' . img($Sfr['items'][$i]['img'] ?? '') . '" alt="" loading="lazy"></figure><h3>' . e($x['t'] ?? '') . '</h3><p>' . e($x['p'] ?? '') . '</p></div>';
+    $fest = $it ? '<section class="sec">' . sec_head($S['fest_h'] ?? '', $S['fest_p'] ?? '') . '<div class="why-g cu-g sb-g">' . $it . '</div></section>' : '';
+    $vids = '<section class="sec sb-vid">' . sec_head($S['vid_h'] ?? '', $S['vid_p'] ?? '') . '<div class="wv-grid">' . wclip('sbdance', (string)($S['vid_cap'] ?? ''), true, ' rv') . wclip('sbf', '', false, ' rv') . '</div></section>';
+    $body = phead($S['h'], $S['lead'] ?? '', $Sd['hero_img'] ?? null) . $intro . $steps . $fest . $vids . cta();
+    return shell('sebiba.html', $body, ['title' => $S['h'], 'desc' => $S['lead'] ?? null, 'og' => $Sd['hero_img'] ?? null]);
+}
+function page_terms(): string
+{
+    $T = P('terms');
+    if (empty($T['h'])) return page_404();
+    $o = '';
+    foreach (($T['secs'] ?? []) as $x) $o .= '<div class="val rv"><h3>' . e($x['t'] ?? '') . '</h3><p>' . nl2br(e($x['p'] ?? '')) . '</p></div>';
+    return shell('conditions.html', phead($T['h'], $T['lead'] ?? '') . '<section class="sec terms"><div class="vals terms-l">' . $o . '</div></section>', ['title' => $T['h'], 'desc' => $T['lead'] ?? null]);
 }
 
 function page_404(): string
@@ -682,6 +744,9 @@ function render_route(string $lang, string $p): string
         case 'blog': return page_blog();
         case 'reservation': return page_booking();
         case 'avis': return page_reviews();
+        case 'votre-avis': return page_reviews(true);
+        case 'sebiba': return page_sebiba();
+        case 'conditions': return page_terms();
     }
     if (str_starts_with($p, 'circuit-') && ($c = doc_by_slug('circuit', substr($p, 8)))) return page_trip($c);
     if (str_starts_with($p, 'blog-') && ($b = doc_by_slug('post', substr($p, 5)))) return page_post($b);
@@ -696,7 +761,7 @@ function render_route(string $lang, string $p): string
 function sitemap(): string
 {
     $dom = rtrim((string)(settings()['domain'] ?? ''), '/');
-    $pages = ['', 'presentation.html', 'circuits.html', 'destinations.html', 'art-rupestre.html', 'culture.html', 'infos-pratiques.html', 'faq.html', 'contact.html', 'galerie.html', 'blog.html', 'reservation.html', 'avis.html'];
+    $pages = ['', 'presentation.html', 'circuits.html', 'destinations.html', 'art-rupestre.html', 'culture.html', 'sebiba.html', 'infos-pratiques.html', 'faq.html', 'contact.html', 'galerie.html', 'blog.html', 'reservation.html', 'avis.html', 'conditions.html'];
     foreach (docs('circuit') as $c) $pages[] = 'circuit-' . $c['slug'] . '.html';
     foreach (docs('post') as $b) $pages[] = 'blog-' . $b['slug'] . '.html';
     $x = '<?xml version="1.0" encoding="UTF-8"?>' . "\n" . '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">';
